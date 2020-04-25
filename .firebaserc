@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "foommy2-c46ba": {
+      "hosting": {
+        "Foommy2": [
+          "foommy2-c46ba"
+        ]
+      }
+    }
+  }
+}
