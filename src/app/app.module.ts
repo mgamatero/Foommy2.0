@@ -12,10 +12,18 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 
 import{ FoommyService} from './services/foommy.service';
+import { PageLandingComponent } from './page-landing/page-landing.component';
+import { HeaderComponent } from './page-landing/header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { MenubarComponent } from './menubar/menubar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageLandingComponent,
+    HeaderComponent,
+    FooterComponent,
+    MenubarComponent
   ],
   imports: [
     BrowserModule,

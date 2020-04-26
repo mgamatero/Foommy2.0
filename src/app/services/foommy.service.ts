@@ -17,5 +17,11 @@ export class FoommyService {
   // recipes: Observable<Recipe[]>;
   // recipeByID: Observable<Recipe>;
   // recipeDocument: AngularFirestoreDocument<Recipe>;
-  constructor() { }
+  constructor(public afs: AngularFirestore) { }
+
+  fbTest() {
+    return this.afs
+    .collection('recipes', (ref) => ref.orderBy('name'))
+    .snapshotChanges();
+  }
 }
