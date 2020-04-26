@@ -21,7 +21,7 @@ export class FoommyService {
 
   fbTest() {
     return this.afs
-    .collection('recipes', (ref) => ref.orderBy('name'))
+    .collection('test')
     .snapshotChanges();
   }
 }

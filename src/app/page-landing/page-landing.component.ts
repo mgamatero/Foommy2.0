@@ -7,13 +7,20 @@ import { FoommyService} from '../services/foommy.service';
   styleUrls: ['./page-landing.component.css']
 })
 export class PageLandingComponent implements OnInit {
-testFB : string;
+testFB: any [];
   constructor( private afs:FoommyService) { }
 
   ngOnInit(): void {
     this.afs.fbTest().subscribe((data)=>{
-this.testFB = data as any;
+      this.testFB = data.map((e) => {
+        console.log(data[1].payload.doc.id)
+        return {
+          id: e.payload.doc.id,
+          ...(e.payload.doc.data() as any),
+        } as any;
+      });
     })
+    // console.log(this.testFB)
   }
 
 }
