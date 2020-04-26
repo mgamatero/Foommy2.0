@@ -1,0 +1,14 @@
+.header-img{
+  height: 75vh;
+  background: url(../../../assets/images/header-img.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border: none;
+  /* border-radius: 1em; */
+
+  /* Add the blur effect */
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+}
