@@ -16,6 +16,7 @@ import { PageLandingComponent } from './page-landing/page-landing.component';
 import { HeaderComponent } from './page-landing/header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenubarComponent } from './menubar/menubar.component';
+import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MenubarComponent } from './menubar/menubar.component';
     PageLandingComponent,
     HeaderComponent,
     FooterComponent,
-    MenubarComponent
+    MenubarComponent,
+    PageNotfoundComponent
   ],
   imports: [
     BrowserModule,
