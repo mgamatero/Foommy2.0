@@ -1,0 +1,40 @@
+.footer-sections{
+  list-style: none;
+}
+
+.footer-icon,
+.footer-social-icon,
+.footer-social-icons-section,
+.footer-app-icon{
+    list-style: none;
+    justify-content:center;
+}
+
+.footer-sections{
+
+  padding: 3px;
+  display: flex;
+
+justify-content: space-around;
+align-items: center;
+/* justify-content: center; */
+}
+
+.footer-social-icons-section,
+.footer-app-section{
+display:flex;
+flex-direction: row;
+}
+
+.footer-social-icon,
+.footer-app-icon{
+  padding:0px 2px;
+}
+
+
+.footer-icon-foommy,
+.footer-social-icon,
+.footer-app-icon
+{
+  max-width:2.8rem
+}
