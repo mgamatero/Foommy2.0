@@ -17,6 +17,7 @@ import { HeaderComponent } from './page-landing/header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenubarComponent } from './menubar/menubar.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
+import { HowFoomyComponent } from './page-landing/how-foomy/how-foomy.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
     HeaderComponent,
     FooterComponent,
     MenubarComponent,
-    PageNotfoundComponent
+    PageNotfoundComponent,
+    HowFoomyComponent
   ],
   imports: [
     BrowserModule,
