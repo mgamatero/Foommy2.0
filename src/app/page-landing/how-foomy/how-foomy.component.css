@@ -3,13 +3,13 @@
   background-color: #f5e7e7;
   }
 
-/* .how-it-works-section{
-padding:2em;
-} */
-
 .how-it-works-section, .how-it-works-icons{
   padding:2em;
 /* margin: 3em 0; */
+  }
+
+  .how-icon{
+    padding:1rem;
   }
 
 
