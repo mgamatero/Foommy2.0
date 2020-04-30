@@ -24,6 +24,7 @@ import { FeedbackComponent } from './page-landing/feedback/feedback.component';
 import { ButtonModule } from 'primeng/button';
 import { FoommiesSignedOnComponent } from './page-landing/foommies-signed-on/foommies-signed-on.component';
 import { FoommiesNotSignedOnComponent } from './page-landing/foommies-not-signed-on/foommies-not-signed-on.component';
+import { PageWhyfoommyComponent } from './page-whyfoommy/page-whyfoommy.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { FoommiesNotSignedOnComponent } from './page-landing/foommies-not-signed
     FeedbackComponent,
     FoommiesSignedOnComponent,
     FoommiesNotSignedOnComponent,
+    PageWhyfoommyComponent,
   ],
   imports: [
     BrowserModule,
