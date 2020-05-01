@@ -1,4 +1,3 @@
-
 .footer-sections {
   list-style: none;
   border-top: solid 2px gainsboro;
@@ -11,7 +10,7 @@
 .footer-app-section {
   list-style: none;
   justify-content: center;
-  margin:2px;
+  margin: 2px;
 }
 
 .footer-sections {
@@ -29,6 +28,11 @@
   flex-direction: row;
 }
 
+.individual-icons{
+  display: flex;
+  flex-direction: row;
+}
+
 .footer-social-icon,
 .footer-app-icon {
   /* padding: 0px 4px; */
@@ -42,4 +46,31 @@
 
 .footer-text {
   font-size: 0.7rem;
+  font-weight: bolder;
+
 }
+
+.footer-social-icons-section,
+.footer-app-section {
+  align-items: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .footer-sections {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-social-icons-section,
+  .footer-app-section {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .footer-text{
+     justify-content: flex-start;
+           }
+}
+
+/* <li class="footer-icon">
+<ul class="footer-social-icons-section"> */
