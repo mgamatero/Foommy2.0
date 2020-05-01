@@ -1,0 +1,22 @@
+.become-a-chef-section {
+  background-color: #fdd;
+  padding: 3rem;
+}
+
+.become-a-chef-subsection {
+  padding: 1rem;
+}
+
+.become-a-chef-titletext{
+ margin:2rem;
+}
+
+.become-a-chef-subtext{
+
+}
+
+@media only screen and (max-width: 970px) {
+  .become-a-chef-section {
+    padding: 0.5rem;
+  }
+}

@@ -25,6 +25,7 @@ import { ButtonModule } from 'primeng/button';
 import { FoommiesSignedOnComponent } from './page-landing/foommies-signed-on/foommies-signed-on.component';
 import { FoommiesNotSignedOnComponent } from './page-landing/foommies-not-signed-on/foommies-not-signed-on.component';
 import { PageWhyfoommyComponent } from './page-whyfoommy/page-whyfoommy.component';
+import { PageBecomeAChefComponent } from './page-become-a-chef/page-become-a-chef.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { PageWhyfoommyComponent } from './page-whyfoommy/page-whyfoommy.componen
     FoommiesSignedOnComponent,
     FoommiesNotSignedOnComponent,
     PageWhyfoommyComponent,
+    PageBecomeAChefComponent,
   ],
   imports: [
     BrowserModule,
