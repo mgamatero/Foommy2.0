@@ -1,1 +1,8 @@
-<p>foommies-not-signed-on works!</p>
+<div class="foommies-not-signed-on-section">
+  <div class="global-title-text global-center">Foommies near you</div>
+  <div>(Not from database...for non logged on users only)</div>
+  <h2 *ngFor="let tempChef of tempData">
+    {{tempChef.chefName}}
+    <img src="{{tempChef.image}}" alt="" style="max-width:3rem">
+  </h2>
+</div>

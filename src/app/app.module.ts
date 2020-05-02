@@ -27,6 +27,8 @@ import { FoommiesNotSignedOnComponent } from './page-landing/foommies-not-signed
 import { PageWhyfoommyComponent } from './page-whyfoommy/page-whyfoommy.component';
 import { PageBecomeAChefComponent } from './page-become-a-chef/page-become-a-chef.component';
 
+import{NonLoggedOnDataService} from './services/non-logged-on-data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +59,7 @@ import { PageBecomeAChefComponent } from './page-become-a-chef/page-become-a-che
 
     ButtonModule
   ],
-  providers: [FoommyService],
+  providers: [FoommyService, NonLoggedOnDataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
