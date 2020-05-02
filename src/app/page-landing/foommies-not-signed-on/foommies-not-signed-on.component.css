@@ -1,6 +1,7 @@
 .foommies-not-signed-on-section{
   background-color: #f5efef;
   padding:1.5em;
+  border: solid red 1px;
 }
 
 /* .foomies-near-you-section .foomies-near-you-title{
