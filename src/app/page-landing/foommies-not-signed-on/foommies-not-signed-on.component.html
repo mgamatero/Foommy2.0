@@ -2,7 +2,7 @@
   <div class="global-title-text global-center">Foommies near you</div>
   <div>(Not from database...for non logged on users only)</div>
    <div class="p-grid foommy-cards">
-    <div class="p-sm-6" *ngFor="let tempChef of tempData">
+    <div class="p-sm-6 p-md-4" *ngFor="let tempChef of tempData">
       <p-card header={{tempChef.chefName}} subheader={{tempChef.misc}} styleClass="ui-card-shadow" id={{tempChef.id}}
         [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
         <p-header>
