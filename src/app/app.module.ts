@@ -22,12 +22,15 @@ import { HowFoomyComponent } from './page-landing/how-foomy/how-foomy.component'
 import { FeedbackComponent } from './page-landing/feedback/feedback.component';
 
 import { ButtonModule } from 'primeng/button';
+import { CardModule } from "primeng/card";
+
 import { FoommiesSignedOnComponent } from './page-landing/foommies-signed-on/foommies-signed-on.component';
 import { FoommiesNotSignedOnComponent } from './page-landing/foommies-not-signed-on/foommies-not-signed-on.component';
 import { PageWhyfoommyComponent } from './page-whyfoommy/page-whyfoommy.component';
 import { PageBecomeAChefComponent } from './page-become-a-chef/page-become-a-chef.component';
 
 import{NonLoggedOnDataService} from './services/non-logged-on-data.service';
+import { NotLoggedSampleFoommyComponent } from './not-logged-sample-foommy/not-logged-sample-foommy.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,7 @@ import{NonLoggedOnDataService} from './services/non-logged-on-data.service';
     FoommiesNotSignedOnComponent,
     PageWhyfoommyComponent,
     PageBecomeAChefComponent,
+    NotLoggedSampleFoommyComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,8 @@ import{NonLoggedOnDataService} from './services/non-logged-on-data.service';
     ReactiveFormsModule,
     FormsModule,
 
-    ButtonModule
+    ButtonModule,
+    CardModule
   ],
   providers: [FoommyService, NonLoggedOnDataService],
   bootstrap: [AppComponent],

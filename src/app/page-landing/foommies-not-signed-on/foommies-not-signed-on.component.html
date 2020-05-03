@@ -1,8 +1,47 @@
 <div class="foommies-not-signed-on-section">
   <div class="global-title-text global-center">Foommies near you</div>
   <div>(Not from database...for non logged on users only)</div>
-  <h2 *ngFor="let tempChef of tempData">
-    {{tempChef.chefName}}
-    <img src="{{tempChef.image}}" alt="" style="max-width:3rem">
-  </h2>
+  <!-- <div *ngFor="let tempChef of tempData"> -->
+
+  <div class="p-grid">
+    <div class="p-col-3" *ngFor="let tempChef of tempData">
+      <p-card header={{tempChef.chefName}} subheader={{tempChef.misc}} styleClass="ui-card-shadow" id={{tempChef.id}}
+        [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <p-header>
+          <img src="Card" src={{tempChef.image}}>
+        </p-header>
+        <div>{{tempChef.location}}</div>
+        <div>{{tempChef.hours}}</div>
+      </p-card>
+    </div>
+  </div>
 </div>
+
+<!-- {
+  id: 'BBBBB',
+  chefName: '2nd Mike Non Logged On',
+  image:
+    'https://www.1400foodlab.com/wp-content/uploads/Chef-icon-600x600.jpg',
+  cuisine: 'Indian',
+  diningOptions: ['Dine in','Takeout'],
+  location:"Tustin,CA",
+  hours: 'M-F 11:30-9PM',
+  theDiningArea:'Table of 8 at our garage area.',
+  howToGetThere:'Close to the 405f fwy, Harbor exit',
+  additionalInfo:'Bring alcohol but you need to share with the host.  No rude behavior.  Kids welcome'
+} -->
+
+
+<!--
+<div class="p-grid">
+  <div class="p-col-3" *ngFor="let chef of chefFromDB">
+    <p-card header={{chef.name}} subheader={{chef.misc}} styleClass="ui-card-shadow" id={{chef.id}} (click)="clickChefDetails(chef)"
+    [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      <p-header>
+        <img src="Card" src={{chef.image}}>
+      </p-header>
+      <div>{{chef.city}}, {{chef.state}}</div>
+      id is = {{chef.id}}
+    </p-card>
+  </div>
+</div> -->
