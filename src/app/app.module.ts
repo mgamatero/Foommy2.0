@@ -31,6 +31,7 @@ import { PageBecomeAChefComponent } from './page-become-a-chef/page-become-a-che
 
 import{NonLoggedOnDataService} from './services/non-logged-on-data.service';
 import { NotLoggedSampleFoommyComponent } from './not-logged-sample-foommy/not-logged-sample-foommy.component';
+import { PageNotLoggedChefDetailsComponent } from './page-not-logged-chef-details/page-not-logged-chef-details.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { NotLoggedSampleFoommyComponent } from './not-logged-sample-foommy/not-l
     PageWhyfoommyComponent,
     PageBecomeAChefComponent,
     NotLoggedSampleFoommyComponent,
+    PageNotLoggedChefDetailsComponent,
   ],
   imports: [
     BrowserModule,

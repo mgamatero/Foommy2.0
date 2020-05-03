@@ -14,7 +14,7 @@ export class FoommiesSignedOnComponent implements OnInit {
   ngOnInit(): void {
     this.afs.fbTest().subscribe((data)=>{
       this.testFB = data.map((e) => {
-        console.log(data[1].payload.doc.id)
+        // console.log(data[1].payload.doc.id)
         return {
           id: e.payload.doc.id,
           ...(e.payload.doc.data() as any),

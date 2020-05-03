@@ -38,4 +38,12 @@ additionalInfo:'Our dining experience is best for quiet and relaxed times with f
   getNonLoggedOnData(): any {
     return this.nonLoggedOnChefs;
   }
+
+  getNonLoggedOnDataByID(id): any {
+    const byId = this.nonLoggedOnChefs.filter(chefs=>{
+      return chefs.id === id
+    });
+    // console.log('tempchefbyid: ', byId)
+    return byId
+  }
 }
