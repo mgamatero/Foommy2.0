@@ -4,6 +4,10 @@
   border: solid red 1px;
 }
 
+.foommy-cards{
+  padding:.6rem;
+}
+
 /* .foomies-near-you-section .foomies-near-you-title{
   background-color: #f5efef;
   font-family: 'Nunito',sans-serif;
