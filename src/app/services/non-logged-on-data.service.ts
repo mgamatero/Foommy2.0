@@ -10,8 +10,8 @@ export class NonLoggedOnDataService {
       {
         id: 'AAAAA',
         aboutKitchen:
-          'Welcome to my humble kitchen.  I will cook in front of you, enjoy the food, company and make a friend in me.',
-        chefName: 'Mike Non Logged On',
+          'Welcome to my humble kitchen.  I specialize in Italian-Asian Fusion.  You will enjoy not only our food, but the whole dining experience as well!',
+        chefName: 'Chef Mike',
         placeDesc:
           'Homely little dining area.  Pretty casual vibe here.  Staff and family members are part of this kitchen as we serve you.',
           theDiningArea:
@@ -35,14 +35,14 @@ export class NonLoggedOnDataService {
       {
         id: 'BBBBB',
         aboutKitchen:
-          'Welcome to my humble kitchen.  I will cook in front of you, enjoy the food, company and make a friend in me.',
-        chefName: '2nd Chef - Non Logged On',
+          'Family kitchen experience. This is a loud, fun, casual experience. You might even be asked to help cook!  Homely little dining area.  Pretty casual vibe here.  Staff and family members are part of this kitchen as we serve you.',
+        chefName: 'Chef Sunny',
         placeDesc:
-          'Family kitchen to experience for you. This is loud, fun, casual.',
+          'Family kitchen to experience for you. This is a loud, fun, casual experience.',
           theDiningArea:
           'Nice patio setup under a string of patio lights.',
         additionalInfo:
-          'Kitchen staff and family members are in/out of my kitchen.',
+          'Kitchen staff and family members are in/out of my kitchen. Be aware of this.',
           street: '9987 Main St',
         city: 'Anaheim Hills',
         state: 'CA',

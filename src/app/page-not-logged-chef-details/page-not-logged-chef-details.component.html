@@ -1,2 +1,79 @@
-<p>page-not-logged-chef-details works!</p> TempChefID is {{tempChefId}}
-<p>{{tempchefInfo | json}}</p>
+<!-- <p>{{tempchefInfo | json}}</p> -->
+<section class="non-logged-chef-details-section">
+  <div class="p-grid">
+    <div class="p-md-4 global-center">
+      <img src={{tempchefInfo.image}} class="chef-image-icon" style="width: 100%; max-width:200px fit-content"
+        alt=image>
+    </div>
+    <div class="p-md-8 chef-details-header-info">
+      <div class="global-title-text">
+        {{tempchefInfo.chefName}}
+      </div>
+      <div>
+        <i class="fas fa-concierge-bell"></i>
+        <span *ngFor="let diningOptions of tempchefInfo.diningOptions">
+          -
+          {{diningOptions}}
+        </span>
+      </div>
+      <div>
+        <i class="fas fa-money-bill-wave"></i>
+        <span *ngFor="let payment of tempchefInfo.paymentMethod">
+          -
+          {{payment}}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="p-grid about-kitchen-section">
+    <div class="p-col global-subtitle-text ">
+      {{tempchefInfo.aboutKitchen}}
+    </div>
+  </div>
+  <hr class="global-divider">
+  <div class="p-grid location-section">
+    <div class="p-col global-subtitle-text ">
+      Location:
+      <p>
+        {{tempchefInfo.city}}, {{tempchefInfo.state}}
+      </p>
+      <img src="http://www.bestplaces.net/images/city/0680854_CA_Tustin.png" alt="tustin map">
+    </div>
+  </div>
+  <hr class="global-divider">
+  <div class="p-grid hours-section">
+    <div class="p-col global-subtitle-text ">
+      Hours:
+      <p>
+        {{tempchefInfo.availability}}
+      </p>
+    </div>
+  </div>
+  <hr class="global-divider">
+  <div class="p-grid dining-area-section">
+    <div class="p-col global-subtitle-text ">
+      The Dining Area:
+      <p>
+        {{tempchefInfo.theDiningArea}}
+      </p>
+    </div>
+  </div>
+  <hr class="global-divider">
+  <div class="p-grid how-to-get-there-section">
+    <div class="p-col global-subtitle-text ">
+      How to get there:
+      <p>
+        {{tempchefInfo.howToGetThere}}
+      </p>
+    </div>
+  </div>
+  <hr class="global-divider">
+  <div class="p-grid additional-info-section">
+    <div class="p-col global-subtitle-text ">
+      Additional Info:
+      <p>
+        {{tempchefInfo.additionalInfo}}
+      </p>
+    </div>
+  </div>
+ </section>
