@@ -1,11 +1,10 @@
 <!-- <p>{{tempchefInfo | json}}</p> -->
 <section class="non-logged-chef-details-section">
   <div class="p-grid">
-    <div class="p-sm-4 global-center">
-      <img src={{tempchefInfo.image}} class="chef-image-icon" style="width: 100%; max-width:200px fit-content"
-        alt=image>
+    <div class="p-col-6">
+      <img src={{tempchefInfo.image}} class="chef-image-icon global-image-responsive" alt="chefimage">
     </div>
-    <div class="p-sm-8 chef-details-header-info">
+    <div class="p-col-6 chef-details-header-info">
       <div class="global-title-text">
         {{tempchefInfo.chefName}}
       </div>
@@ -19,11 +18,12 @@
       <div>
         <i class="fas fa-money-bill-wave"></i>
         <span *ngFor="let payment of tempchefInfo.paymentMethod">
-           {{payment}}
+          {{payment}}
         </span>
       </div>
     </div>
   </div>
+
   <div class="p-grid about-kitchen-section">
     <div class="p-col global-subtitle-text ">
       {{tempchefInfo.aboutKitchen}}
@@ -37,7 +37,8 @@
         <p>
           {{tempchefInfo.city}}, {{tempchefInfo.state}}
         </p>
-        <img src="http://www.bestplaces.net/images/city/0680854_CA_Tustin.png" alt="tustin map">
+        <img src="http://www.bestplaces.net/images/city/0680854_CA_Tustin.png" class="global-image-responsive" style="max-width: 50vh"
+          alt="tustin map">
       </div>
 
     </div>
@@ -86,4 +87,4 @@
       </div>
     </div>
   </div>
- </section>
+</section>

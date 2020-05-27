@@ -6,7 +6,7 @@
       <p-card header={{tempChef.chefName}} subheader={{tempChef.misc}} styleClass="ui-card-shadow" id={{tempChef.id}}
         [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="clickNonLoggedChefCard(tempChef.id)">
         <p-header>
-          <img src="Card" src={{tempChef.image}}>
+          <img src="Card" src={{tempChef.image}} class="global-responsive-img">
         </p-header>
         <div>{{tempChef.city}}, {{tempChef.state}}</div>
         <div>{{tempChef.availability}}</div>

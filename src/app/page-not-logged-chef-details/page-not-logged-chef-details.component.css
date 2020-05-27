@@ -6,8 +6,9 @@
 }
 
 .chef-image-icon{
-  border-radius: 40%;
-  border:black;
+  border-radius: 50%;
+  /* box-shadow: 2px 2px 10px 0px #773f31; */
+  box-shadow: 2px 2px 10px 0px black;
 }
 
 .chef-details-header-info{

@@ -29,7 +29,7 @@ export class NonLoggedOnDataService {
         seatingCapacity: '6 guests',
         advanceReservation: 'Same Day',
         prepTime: '2 day notice',
-        image: 'https://goanwiki.files.wordpress.com/2014/10/grilled-salmon-recheado-masala-spicy-fish-recipes-goan.jpg?w=490&h=367'
+        image: 'https://goanwiki.files.wordpress.com/2014/10/grilled-salmon-recheado-masala-spicy-fish-recipes-goan.jpg'
 
       },
       {
