@@ -20,5 +20,9 @@
 
 .about-kitchen-section{
   padding:2.5rem;
+}
 
+.chef-text-content{
+  margin:4rem;
+  font-style: italic;
 }
