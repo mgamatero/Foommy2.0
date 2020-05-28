@@ -11,11 +11,11 @@ export class NonLoggedOnDataService {
         id: 'AAAAA',
         aboutKitchen:
           'Welcome to my humble kitchen.  I specialize in Italian-Asian Fusion.  You will enjoy not only our food, but the whole dining experience as well!',
-        chefName: 'Chef Mike',
+        chefName: 'Chef Sunny',
         placeDesc:
           'Homely little dining area.  Pretty casual vibe here.  Staff and family members are part of this kitchen as we serve you.',
           theDiningArea:
-           'We have a 6 seat table in our family patio. Eat with our family, or with privacy as you need.',
+           'We have a tables in our patio area. Eat with our family, or with privacy as you need.',
          additionalInfo:
            'Alcohol is not served.  You can bring a bottle of wine, only if you share',
         street: '1234 Any St',
@@ -29,14 +29,14 @@ export class NonLoggedOnDataService {
         seatingCapacity: '6 guests',
         advanceReservation: 'Same Day',
         prepTime: '2 day notice',
-        image: 'https://goanwiki.files.wordpress.com/2014/10/grilled-salmon-recheado-masala-spicy-fish-recipes-goan.jpg'
+        image: 'https://tse4.mm.bing.net/th?id=OIP.lttKwfeg7Y9XcX_NKMKy3QHaHa&pid=Api&P=0'
 
       },
       {
         id: 'BBBBB',
         aboutKitchen:
           'Family kitchen experience. This is a loud, fun, casual experience. You might even be asked to help cook!  Homely little dining area.  Pretty casual vibe here.  Staff and family members are part of this kitchen as we serve you.',
-        chefName: 'Chef Sunny',
+        chefName: 'Cucina de Mike',
         placeDesc:
           'Family kitchen to experience for you. This is a loud, fun, casual experience.',
           theDiningArea:
@@ -55,7 +55,7 @@ export class NonLoggedOnDataService {
         advanceReservation: 'Same Day',
         prepTime: '2 day notice',
         image:
-          'https://tse1.mm.bing.net/th?id=OIP.8D_rb6Akp-e8rX0_bOYYkwHaFj&pid=Api&P=0&w=231&h=174'
+          'https://tse3.mm.bing.net/th?id=OIP.kxjCHP_LdPIF_Y8nh6-r-QHaIg&pid=Api&P=0'
              },
     ];
   }

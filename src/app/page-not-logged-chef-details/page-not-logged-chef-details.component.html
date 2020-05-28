@@ -40,7 +40,17 @@
         <img src="http://www.bestplaces.net/images/city/0680854_CA_Tustin.png" class="global-image-responsive" style="max-width: 50vh"
           alt="tustin map">
       </div>
-
+    </div>
+  </div>
+  <hr class="global-divider">
+  <div class="p-grid how-to-get-there-section">
+    <div class="p-col global-subtitle-text ">
+      How to get there:
+      <div class="chef-text-content">
+        <p>
+          {{tempchefInfo.howToGetThere}}
+        </p>
+      </div>
     </div>
   </div>
   <hr class="global-divider">
@@ -66,12 +76,23 @@
     </div>
   </div>
   <hr class="global-divider">
-  <div class="p-grid how-to-get-there-section">
+  <div class="p-grid dining-area-section">
     <div class="p-col global-subtitle-text ">
-      How to get there:
+      Seating Capacity:
       <div class="chef-text-content">
         <p>
-          {{tempchefInfo.howToGetThere}}
+          {{tempchefInfo.seatingCapacity}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <hr class="global-divider">
+  <div class="p-grid dining-area-section">
+    <div class="p-col global-subtitle-text ">
+      Prep Time:
+      <div class="chef-text-content">
+        <p>
+          {{tempchefInfo.prepTime}}
         </p>
       </div>
     </div>
