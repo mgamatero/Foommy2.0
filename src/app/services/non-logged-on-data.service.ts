@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NonLoggedOnDataService {
   nonLoggedOnChefs: any;
-  constructor() {
+  nonLoggedOnDish: any;
+  constructor(private http:HttpClient) {
     this.nonLoggedOnChefs = [
       {
         id: 'AAAAA',
@@ -58,17 +60,102 @@ export class NonLoggedOnDataService {
           'https://tse3.mm.bing.net/th?id=OIP.kxjCHP_LdPIF_Y8nh6-r-QHaIg&pid=Api&P=0'
              },
     ];
+
+    this.nonLoggedOnDish = [
+      {
+        "id": "11111",
+        "chefOwner": "AAAAA",
+        "dishName": "Rice Skillet",
+        "dishType": "Side Dish",
+        "dishDescription": "Delicious rice skillet dish.  Healthy, full of protein.  Spicy, tasy",
+        "ingredients": [
+          "Potatoes",
+          "Rice",
+          "Peas",
+          "Garbanzo",
+          "Carrots",
+          "Seasoning"
+        ],
+        "dishImage": "https://i.pinimg.com/originals/2b/aa/bb/2baabb6129c498f48ac4118ae96edcdc.jpg"
+      },
+      {
+        "id": "22222",
+        "chefOwner": "AAAAA",
+        "dishName": "Steak",
+        "dishType": "Main",
+        "dishDescription": "Steak - we suggest medium rare to medium well for this one",
+        "ingredients": [
+          "Angus Beef",
+          "Potatoes",
+          "Spinach"
+        ],
+        "dishImage": "https://realfood.tesco.com/media/images/Jimmys-Steak-for-two-4979eab2-67f7-4524-a62a-f54951b1df60-0-472x310.jpg"
+      },
+      {
+        "id": "33333",
+        "chefOwner": "BBBBB",
+        "dishName": "Salmon with White Bean Salae",
+        "dishType": "Main",
+        "dishDescription": "Simple Salmon dish with our special seasoning.  This makes it not so simple anymore.",
+        "ingredients": [
+          "Salmon",
+          "Seasoning",
+          "Lettuce",
+          "White Bean",
+          "Olive Oil"
+        ],
+        "dishImage": "https://wildalaskasalmonandseafood.com/wp-content/uploads/2016/12/alaskasalmonwhitebeansalad-e1482946780221-300x300.jpg"
+      },
+      {
+        "id": "44444",
+        "chefOwner": "BBBBB",
+        "dishName": "Drunken Chicken",
+        "dishType": "Main",
+        "dishDescription": "Chicken grilled over beer can.  Classic recipe.",
+        "ingredients": [
+          "Chicken",
+          "Beer",
+          "Seasoning"
+        ],
+        "dishImage": "https://vignette.wikia.nocookie.net/familyrecipes/images/4/49/Beer_can_chicken-01.jpg/revision/latest?cb=20110516131708"
+      }
+    ]
   }
 
-  getNonLoggedOnData(): any {
+  getNonLoggedOnChef(): any {
     return this.nonLoggedOnChefs;
   }
 
-  getNonLoggedOnDataByID(id): any {
-    const byId = this.nonLoggedOnChefs.filter((chefs) => {
+  getNonLoggedOnChefByID(id): any {
+    const chefById = this.nonLoggedOnChefs.filter((chefs) => {
       return chefs.id === id;
     });
     // console.log('tempchefbyid: ', byId)
-    return byId;
+    return chefById;
+  }
+
+
+
+
+
+
+
+
+  getNonLoggedOnDishes(): any {
+    return this.nonLoggedOnDish;
+    // I CANNOT GET THIS TO WORK IN HTML??
+    // this.http.get('../assets/data/notloggedon-dishes.json').subscribe(dishes=>{
+    //   console.log(dishes);
+    //   this.nonLoggedOnDish = dishes;
+    //   return this.nonLoggedOnDish;
+    // })
+  }
+
+  getNonLoggedOnDishesByID(id): any {
+    const dishByChefId = this.nonLoggedOnDish.filter((dishes) => {
+      return dishes.chefOwner === id;
+    });
+    // console.log('tempchefbyid: ', byId)
+    return dishByChefId;
   }
 }

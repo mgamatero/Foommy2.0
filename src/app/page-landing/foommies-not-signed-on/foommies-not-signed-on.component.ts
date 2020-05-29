@@ -13,12 +13,11 @@ export class FoommiesNotSignedOnComponent implements OnInit {
   constructor(private notLoggedOn: NonLoggedOnDataService, private router:Router) {}
 
   ngOnInit(): void {
-    this.tempData = this.notLoggedOn.getNonLoggedOnData();
+    this.tempData = this.notLoggedOn.getNonLoggedOnChef();
 
   }
 
   clickNonLoggedChefCard(id){
-
     this.router.navigate(['nonLoggedChefDetails/', id]);
   }
 }

@@ -2,22 +2,22 @@
 <section class="non-logged-chef-details-section">
   <div class="p-grid">
     <div class="p-sm-12 p-md-6">
-      <img src={{tempchefInfo.image}} class="chef-image-icon global-image-responsive" alt="chefimage">
+      <img src={{tempChefInfo.image}} class="chef-image-icon global-image-responsive" alt="chefimage">
     </div>
     <div class=" p-sm-12 p-md-6 chef-details-header-info">
       <div class="global-title-text">
-        {{tempchefInfo.chefName}}
+        {{tempChefInfo.chefName}}
       </div>
       <div>
         <i class="fas fa-concierge-bell"></i>
-        <span *ngFor="let diningOptions of tempchefInfo.diningOptions">
+        <span *ngFor="let diningOptions of tempChefInfo.diningOptions">
           -
           {{diningOptions}}
         </span>
       </div>
       <div>
         <i class="fas fa-money-bill-wave"></i>
-        <span *ngFor="let payment of tempchefInfo.paymentMethod">
+        <span *ngFor="let payment of tempChefInfo.paymentMethod">
           {{payment}}
         </span>
       </div>
@@ -26,16 +26,27 @@
 
   <div class="p-grid about-kitchen-section">
     <div class="p-col global-subtitle-text ">
-      {{tempchefInfo.aboutKitchen}}
+      {{tempChefInfo.aboutKitchen}}
     </div>
   </div>
+  <div class="p-col global-subtitle-text">
+    Dishes:
+    <div class="chef-text-content">
+      <p>
+        {{tempDishInfo|json}}
+      </p>
+      <img src="http://www.bestplaces.net/images/city/0680854_CA_Tustin.png" class="global-image-responsive" style="max-width: 50vh"
+        alt="tustin map">
+    </div>
+  </div>
+
   <hr class="global-divider">
   <div class="p-grid location-section">
     <div class="p-col global-subtitle-text">
       Location:
       <div class="chef-text-content">
         <p>
-          {{tempchefInfo.city}}, {{tempchefInfo.state}}
+          {{tempChefInfo.city}}, {{tempChefInfo.state}}
         </p>
         <img src="http://www.bestplaces.net/images/city/0680854_CA_Tustin.png" class="global-image-responsive" style="max-width: 50vh"
           alt="tustin map">
@@ -48,7 +59,7 @@
       How to get there:
       <div class="chef-text-content">
         <p>
-          {{tempchefInfo.howToGetThere}}
+          {{tempChefInfo.howToGetThere}}
         </p>
       </div>
     </div>
@@ -59,7 +70,7 @@
       Hours:
       <div class="chef-text-content">
         <p>
-          {{tempchefInfo.availability}}
+          {{tempChefInfo.availability}}
         </p>
       </div>
     </div>
@@ -70,7 +81,7 @@
       The Dining Area:
       <div class="chef-text-content">
         <p>
-          {{tempchefInfo.theDiningArea}}
+          {{tempChefInfo.theDiningArea}}
         </p>
       </div>
     </div>
@@ -81,7 +92,7 @@
       Seating Capacity:
       <div class="chef-text-content">
         <p>
-          {{tempchefInfo.seatingCapacity}}
+          {{tempChefInfo.seatingCapacity}}
         </p>
       </div>
     </div>
@@ -92,7 +103,7 @@
       Prep Time:
       <div class="chef-text-content">
         <p>
-          {{tempchefInfo.prepTime}}
+          {{tempChefInfo.prepTime}}
         </p>
       </div>
     </div>
@@ -103,7 +114,7 @@
       Additional Info:
       <div class="chef-text-content">
         <p>
-          {{tempchefInfo.additionalInfo}}
+          {{tempChefInfo.additionalInfo}}
         </p>
       </div>
     </div>
