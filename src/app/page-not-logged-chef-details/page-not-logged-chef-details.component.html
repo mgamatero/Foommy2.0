@@ -29,15 +29,26 @@
       {{tempChefInfo.aboutKitchen}}
     </div>
   </div>
-  <div class="p-col global-subtitle-text">
+
+  <div class="global-subtitle-text">
     Dishes:
-    <div class="chef-text-content">
-      <p>
-        {{tempDishInfo|json}}
-      </p>
-      <img src="http://www.bestplaces.net/images/city/0680854_CA_Tustin.png" class="global-image-responsive" style="max-width: 50vh"
-        alt="tustin map">
+    <div class="p-sm-6 p-md-4" *ngFor="let dish of tempDishInfo">
+      <p-card>
+        <img src={{dish.dishImage}} class="global-image-responsive">
+        <p-header>
+          {{dish.dishName}}
+        </p-header>
+        <p *ngFor="let ingredients of dish.ingredients">
+          <small>
+            {{ingredients}}
+          </small>
+        </p>
+
+      </p-card>
+
+
     </div>
+    <!-- {{tempDishInfo|json}} -->
   </div>
 
   <hr class="global-divider">
@@ -48,8 +59,8 @@
         <p>
           {{tempChefInfo.city}}, {{tempChefInfo.state}}
         </p>
-        <img src="http://www.bestplaces.net/images/city/0680854_CA_Tustin.png" class="global-image-responsive" style="max-width: 50vh"
-          alt="tustin map">
+        <img src="http://www.bestplaces.net/images/city/0680854_CA_Tustin.png" class="global-image-responsive"
+          style="max-width: 50vh" alt="tustin map">
       </div>
     </div>
   </div>
