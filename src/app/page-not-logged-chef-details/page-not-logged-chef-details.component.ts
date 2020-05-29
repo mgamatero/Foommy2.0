@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { NonLoggedOnDataService } from '../services/non-logged-on-data.service';
+import {CardModule} from 'primeng/card';
+
 
 @Component({
   selector: 'app-page-not-logged-chef-details',
@@ -28,11 +30,16 @@ export class PageNotLoggedChefDetailsComponent implements OnInit {
     )[0];
     console.log(this.tempChefInfo);
 
-    //Dish data here
+    //Dish data here - CHEAT for now.  Hardcoded in Service
     this.tempDishInfo = this.tempData.getNonLoggedOnDishesByID(this.tempChefId);
     console.log('tempDishInfo - ', this.tempDishInfo);
-    // console.log('tempDishInfo - ');
+
      }
 
   ngOnInit(): void {}
+
+  clickNonLoggedDishCard(_chefId, _dishId){
+    this.router.navigate([`nonLoggedDishDetails/${_chefId}/${_dishId}`]);
+  }
+
 }

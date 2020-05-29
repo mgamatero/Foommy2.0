@@ -32,25 +32,23 @@
 
   <div class="global-subtitle-text">
     Dishes:
-    <div class="p-sm-6 p-md-4" *ngFor="let dish of tempDishInfo">
-      <p-card>
-        <img src={{dish.dishImage}} class="global-image-responsive">
-        <p-header>
-          {{dish.dishName}}
-        </p-header>
-        <p *ngFor="let ingredients of dish.ingredients">
-          <small>
-            {{ingredients}}
-          </small>
-        </p>
-
-      </p-card>
-
-
+    <div class="row">
+      <div class="p-sm-6 p-md-4" *ngFor="let dish of tempDishInfo" (click)="clickNonLoggedDishCard(dish.chefOwner,dish.id)">
+        <p-card>
+          <img src={{dish.dishImage}} class="global-image-responsive">
+          <p-header>
+            {{dish.dishName}}
+          </p-header>
+          <p *ngFor="let ingredients of dish.ingredients">
+            <small>
+              {{ingredients}}
+            </small>
+          </p>
+        </p-card>
+      </div>
     </div>
     <!-- {{tempDishInfo|json}} -->
   </div>
-
   <hr class="global-divider">
   <div class="p-grid location-section">
     <div class="p-col global-subtitle-text">
