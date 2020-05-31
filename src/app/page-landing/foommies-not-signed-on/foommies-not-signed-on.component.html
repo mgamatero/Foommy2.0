@@ -1,9 +1,8 @@
 <div class="foommies-not-signed-on-section">
   <div class="global-title-text global-center">Foommies near you</div>
-  <div>(Not from database...for non logged on users only)</div>
-   <div class="p-grid foommy-cards">
+    <div class="p-grid">
     <div class="p-sm-6 p-md-4" *ngFor="let tempChef of tempData">
-      <p-card header={{tempChef.chefName}} subheader={{tempChef.misc}} styleClass="ui-card-shadow" id={{tempChef.id}}
+      <p-card header={{tempChef.chefName}} styleClass="ui-card-shadow" id={{tempChef.id}}
         [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="clickNonLoggedChefCard(tempChef.id)">
         <p-header>
           <img src="Card" src={{tempChef.image}} class="global-responsive-img">

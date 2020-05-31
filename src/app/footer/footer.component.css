@@ -1,7 +1,11 @@
+.footer{
+
+}
+
 .footer-sections {
   list-style: none;
   border-top: solid 2px gainsboro;
-}
+  }
 
 .footer-icon,
 .footer-social-icon,
@@ -19,7 +23,7 @@
 
   justify-content: space-around;
   align-items: center;
-  /* justify-content: center; */
+
 }
 
 .footer-social-icons-section,
@@ -55,6 +59,12 @@
   align-items: center;
 }
 
+.copyright-wrapper{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 @media only screen and (max-width: 400px) {
   .footer{
     padding:0px;
@@ -64,6 +74,7 @@
   .footer-sections {
     flex-direction: column;
     align-items: flex-start;
+
   }
 
   /* .individual-icons{
@@ -76,6 +87,8 @@
     flex-direction: column;
     align-content: flex-start;
   }
+
+
 
 }
 

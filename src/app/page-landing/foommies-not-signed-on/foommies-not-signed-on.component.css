@@ -1,20 +1,11 @@
 .foommies-not-signed-on-section{
-  background-color: #f5efef;
+  /* background-color: #f5efef; */
   padding:1.5em;
-  border: solid red 1px;
+
 }
 
 .foommy-cards{
   padding:.6rem;
+  box-shadow: 2px 2px 10px 0px #f5efef;
 }
 
-/* .foomies-near-you-section .foomies-near-you-title{
-  background-color: #f5efef;
-  font-family: 'Nunito',sans-serif;
-  font-size: 3.8em;
-  color:#773f31;
-}
-
-.foomies-near-you-content{
-padding:1em;
-} */
