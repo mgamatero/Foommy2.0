@@ -6,6 +6,8 @@ import {PageBecomeAChefComponent} from './page-become-a-chef/page-become-a-chef.
 import {PageNotfoundComponent} from './page-notfound/page-notfound.component';
 import {PageNotLoggedChefDetailsComponent} from './page-not-logged-chef-details/page-not-logged-chef-details.component';
 import {PageNotLoggedDishDetailsComponent} from './page-not-logged-dish-details/page-not-logged-dish-details.component';
+import {PageTermsOfServiceComponent} from './page-terms-of-service/page-terms-of-service.component';
+import {PagePrivacyPolicyComponent} from './page-privacy-policy/page-privacy-policy.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: "sample-foomy/:id", component: PageBecomeAChefComponent },
   { path: "nonLoggedChefDetails/:id", component: PageNotLoggedChefDetailsComponent },
   { path: "nonLoggedDishDetails/:chefId/:dishId", component: PageNotLoggedDishDetailsComponent },
+  { path: "termsOfService", component: PageTermsOfServiceComponent },
+  { path: "privacyPolicy", component: PagePrivacyPolicyComponent },
   {path: '**',component: PageNotfoundComponent}
 ];
 

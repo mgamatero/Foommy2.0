@@ -34,6 +34,8 @@ import{NonLoggedOnDataService} from './services/non-logged-on-data.service';
 import { NotLoggedSampleFoommyComponent } from './not-logged-sample-foommy/not-logged-sample-foommy.component';
 import { PageNotLoggedChefDetailsComponent } from './page-not-logged-chef-details/page-not-logged-chef-details.component';
 import { PageNotLoggedDishDetailsComponent } from './page-not-logged-dish-details/page-not-logged-dish-details.component';
+import { PageTermsOfServiceComponent } from './page-terms-of-service/page-terms-of-service.component';
+import { PagePrivacyPolicyComponent } from './page-privacy-policy/page-privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { PageNotLoggedDishDetailsComponent } from './page-not-logged-dish-detail
     NotLoggedSampleFoommyComponent,
     PageNotLoggedChefDetailsComponent,
     PageNotLoggedDishDetailsComponent,
+    PageTermsOfServiceComponent,
+    PagePrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,
