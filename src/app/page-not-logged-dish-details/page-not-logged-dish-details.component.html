@@ -2,3 +2,26 @@
 
 CHEF ID == {{tempChefId}}
 DISH ID == {{tempDishId}}
+
+<div class="section-dish-details">
+ <div class="p-grid">
+   <div class="p-col left-section p-align-center">
+     <!-- {{tempChef|json}} -->
+<!-- {{tempDish|json}} -->
+{{tempDish.dishName}}
+{{tempDish.dishType}}
+
+     {{tempChef.chefName}}
+     {{tempChef.image}}
+
+     <hr>
+     Main Ingredients
+     <div *ngFor="let ingredient of tempDish.ingredients">
+       <ul>
+         <li>{{ingredient}}</li>
+       </ul>
+     </div>
+   </div>
+   <div class="p-col left-section p-align-center">hello too</div>
+ </div>
+</div>
