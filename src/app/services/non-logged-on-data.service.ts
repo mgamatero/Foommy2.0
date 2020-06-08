@@ -151,11 +151,18 @@ export class NonLoggedOnDataService {
     // })
   }
 
-  getNonLoggedOnDishesByID(id): any {
+  getAllDishesByChefID(id): any {
     const dishByChefId = this.nonLoggedOnDish.filter((dishes) => {
       return dishes.chefOwner === id;
     });
     // console.log('tempchefbyid: ', byId)
     return dishByChefId;
+  }
+
+  getDishByDishID(id): any{
+    const dishId = this.nonLoggedOnDish.filter((dish)=>{
+      return dish.id === id;
+    });
+    return dishId;
   }
 }

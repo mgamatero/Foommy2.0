@@ -31,7 +31,7 @@ this.tempChef = this.tempData.getNonLoggedOnChefByID(
 
 
 //Dish data here - CHEAT for now.  Hardcoded in Service
-this.tempDish = this.tempData.getNonLoggedOnDishesByID(this.tempChefId);
+this.tempDish = this.tempData.getDishByDishID(this.tempDishId);
 console.log(this.tempDish)
   }
 

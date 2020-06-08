@@ -31,7 +31,7 @@ export class PageNotLoggedChefDetailsComponent implements OnInit {
     console.log(this.tempChefInfo);
 
     //Dish data here - CHEAT for now.  Hardcoded in Service
-    this.tempDishInfo = this.tempData.getNonLoggedOnDishesByID(this.tempChefId);
+    this.tempDishInfo = this.tempData.getAllDishesByChefID(this.tempChefId);
     console.log('tempDishInfo - ', this.tempDishInfo);
 
      }
