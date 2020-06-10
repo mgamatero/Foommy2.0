@@ -94,7 +94,7 @@ export class NonLoggedOnDataService {
       {
         "id": "33333",
         "chefOwner": "BBBBB",
-        "dishName": "Salmon with White Bean Salae",
+        "dishName": "Salmon with White Bean Salad",
         "dishType": "Main",
         "dishDescription": "Simple Salmon dish with our special seasoning.  This makes it not so simple anymore.",
         "ingredients": [
