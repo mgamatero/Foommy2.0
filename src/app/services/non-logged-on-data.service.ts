@@ -96,7 +96,7 @@ export class NonLoggedOnDataService {
         "chefOwner": "BBBBB",
         "dishName": "Salmon with White Bean Salad",
         "dishType": "Main",
-        "dishDescription": "Simple Salmon dish with our special seasoning.  This makes it not so simple anymore.",
+        "dishDescription": "Simple Salmon dish with our special seasoning.  This makes it not so simple anymore.  Paired with a bed of veggies and homemade vinagrette sauce, this is a perfect dish for light eaters without sacrificing taste.",
         "ingredients": [
           "Salmon",
           "Seasoning",

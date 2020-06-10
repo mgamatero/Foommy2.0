@@ -9,13 +9,18 @@
   /* padding-bottom: 1rem; */
 }
 
+.wrapper-dish-info{
+  padding:2rem;
+
+}
 .ingredients{
   margin-left:1rem;
 }
 
 .main-ingredients-title{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  /* padding-top: 1rem;
+  padding-bottom: 1rem; */
+  padding:2rem;
 }
 
 .dish-image{
@@ -26,5 +31,6 @@
   padding:.5rem;
   background-color: rgb(241, 209, 197);
   font-family: 'Dancing Script', cursive;
-  letter-spacing: .1rem;
+  font-size: 1.3rem;
+  /* letter-spacing: .1rem; */
 }
