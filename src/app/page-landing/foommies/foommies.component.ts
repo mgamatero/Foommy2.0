@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { FoommyService} from '../services/foommy.service';
 import { FoommyService } from 'src/app/services/foommy.service';
 import { FoommyInfo } from '../../models/foommyinfo';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-foommies',
@@ -11,7 +12,7 @@ import { FoommyInfo } from '../../models/foommyinfo';
 export class FoommiesComponent implements OnInit {
   testFB: any[];
   foommies: FoommyInfo[];
-  constructor(private $foomyService: FoommyService) {}
+  constructor(private foomyService: FoommyService, private router:Router) {}
 
   ngOnInit(): void {
 
@@ -27,7 +28,7 @@ export class FoommiesComponent implements OnInit {
     // })
     // console.log(this.testFB)
 
-    this.$foomyService.getAllFoommies().subscribe((data) => {
+    this.foomyService.getAllFoommies().subscribe((data) => {
       this.foommies = data.map((e) => {
         return {
           id: e.payload.doc.id,
@@ -39,8 +40,6 @@ export class FoommiesComponent implements OnInit {
 
   clickFoommyCard(id){
 console.log('Foommy ID is --- ', id)
+this.router.navigate(['foommyDetails/', id]);
   }
-
-
-
 }

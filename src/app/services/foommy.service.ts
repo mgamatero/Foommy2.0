@@ -31,4 +31,9 @@ export class FoommyService {
   getAllFoommies(){
     return this.db.collection('foommies').snapshotChanges();
   }
+
+  // ----------------------GET FOOMMY BY ID---------------------
+  getFoommyByID(id){
+    return this.db.doc(`foommies/${id}`).snapshotChanges();
+  }
 }

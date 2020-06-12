@@ -1,23 +1,28 @@
-<!-- <p>{{tempchefInfo | json}}</p> -->
-<section class="non-logged-chef-details-section">
+
+{{foommyInfo$|json}}
+
+
+<!-- {{foommyInfo}} -->
+
+<!-- <section class="non-logged-chef-details-section">
   <div class="p-grid">
     <div class="p-sm-12 p-md-6">
-      <img src={{tempChefInfo.image}} class="chef-image-icon global-image-responsive" alt="chefimage">
+      <img src={{foommyInfo.foommyimage}} class="chef-image-icon global-image-responsive" alt="foommyimage">
     </div>
     <div class=" p-sm-12 p-md-6 chef-details-header-info">
       <div class="global-title-text">
-        {{tempChefInfo.chefName}}
+        {{foommyInfo.chefName}}
       </div>
       <div>
         <i class="fas fa-concierge-bell"></i>
-        <span *ngFor="let diningOptions of tempChefInfo.diningOptions">
+        <span *ngFor="let diningOptions of foommyInfo.diningOptions">
           -
           {{diningOptions}}
         </span>
       </div>
       <div>
         <i class="fas fa-money-bill-wave"></i>
-        <span *ngFor="let payment of tempChefInfo.paymentMethod">
+        <span *ngFor="let payment of foommyInfo.paymentMethod">
           {{payment}}
         </span>
       </div>
@@ -26,7 +31,7 @@
 
   <div class="p-grid about-kitchen-section">
     <div class="p-col global-subtitle-text ">
-      {{tempChefInfo.aboutKitchen}}
+      {{foommyInfo.aboutKitchen}}
     </div>
   </div>
 
@@ -47,7 +52,7 @@
         </p-card>
       </div>
     </div>
-    <!-- {{tempDishInfo|json}} -->
+    {{tempDishInfo|json}}
   </div>
   <hr class="global-divider">
   <div class="p-grid location-section">
@@ -55,7 +60,7 @@
       Location:
       <div class="chef-text-content">
         <p>
-          {{tempChefInfo.city}}, {{tempChefInfo.state}}
+          {{foommyInfo.city}}, {{foommyInfo.state}}
         </p>
         <img src="http://www.bestplaces.net/images/city/0680854_CA_Tustin.png" class="global-image-responsive"
           style="max-width: 50vh" alt="tustin map">
@@ -68,7 +73,7 @@
       How to get there:
       <div class="chef-text-content">
         <p>
-          {{tempChefInfo.howToGetThere}}
+          {{foommyInfo.howToGetThere}}
         </p>
       </div>
     </div>
@@ -79,7 +84,7 @@
       Hours:
       <div class="chef-text-content">
         <p>
-          {{tempChefInfo.availability}}
+          {{foommyInfo.availability}}
         </p>
       </div>
     </div>
@@ -90,7 +95,7 @@
       The Dining Area:
       <div class="chef-text-content">
         <p>
-          {{tempChefInfo.theDiningArea}}
+          {{foommyInfo.theDiningArea}}
         </p>
       </div>
     </div>
@@ -101,7 +106,7 @@
       Seating Capacity:
       <div class="chef-text-content">
         <p>
-          {{tempChefInfo.seatingCapacity}}
+          {{foommyInfo.seatingCapacity}}
         </p>
       </div>
     </div>
@@ -112,7 +117,7 @@
       Prep Time:
       <div class="chef-text-content">
         <p>
-          {{tempChefInfo.prepTime}}
+          {{foommyInfo.prepTime}}
         </p>
       </div>
     </div>
@@ -123,9 +128,10 @@
       Additional Info:
       <div class="chef-text-content">
         <p>
-          {{tempChefInfo.additionalInfo}}
+          {{foommyInfo.additionalInfo}}
         </p>
       </div>
     </div>
   </div>
-</section>
+</section> -->
+
