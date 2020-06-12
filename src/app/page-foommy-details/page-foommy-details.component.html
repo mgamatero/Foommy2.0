@@ -1,43 +1,43 @@
+<!-- {{foommyInfo$$|json}} -->
 
-{{foommyInfo$|json}}
 
+<!-- {{foommyInfo$}} -->
 
-<!-- {{foommyInfo}} -->
-
-<!-- <section class="non-logged-chef-details-section">
-  <div class="p-grid">
-    <div class="p-sm-12 p-md-6">
-      <img src={{foommyInfo.foommyimage}} class="chef-image-icon global-image-responsive" alt="foommyimage">
-    </div>
-    <div class=" p-sm-12 p-md-6 chef-details-header-info">
-      <div class="global-title-text">
-        {{foommyInfo.chefName}}
+<section class="non-logged-chef-details-section">
+  <div *ngIf="foommyInfo$">
+    <div class="p-grid">
+      <div class="p-sm-12 p-md-6">
+        <img src={{foommyInfo$.foommyImage}} class="chef-image-icon global-image-responsive" alt="foommyimage">
       </div>
-      <div>
-        <i class="fas fa-concierge-bell"></i>
-        <span *ngFor="let diningOptions of foommyInfo.diningOptions">
-          -
-          {{diningOptions}}
-        </span>
-      </div>
-      <div>
-        <i class="fas fa-money-bill-wave"></i>
-        <span *ngFor="let payment of foommyInfo.paymentMethod">
-          {{payment}}
-        </span>
+      <div class=" p-sm-12 p-md-6 chef-details-header-info">
+        <div class="global-title-text">
+          {{foommyInfo$.chefName}}
+        </div>
+        <div>
+          <i class="fas fa-concierge-bell"></i>
+          <span *ngFor="let diningOptions of foommyInfo$.diningOptions">
+            -
+            {{diningOptions}}
+          </span>
+        </div>
+        <div>
+          <i class="fas fa-money-bill-wave"></i>
+          <span *ngFor="let payment of foommyInfo$.paymentMethod">
+            {{payment}}
+          </span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="p-grid about-kitchen-section">
-    <div class="p-col global-subtitle-text ">
-      {{foommyInfo.aboutKitchen}}
+    <div class="p-grid about-kitchen-section">
+      <div class="p-col global-subtitle-text ">
+        {{foommyInfo$.aboutKitchen}}
+      </div>
     </div>
-  </div>
 
-  <div class="global-subtitle-text">
-    Dishes:
-    <div class="row">
+    <div class="global-subtitle-text">
+      Dishes:
+      <!-- <div class="row">
       <div class="p-sm-6 p-md-4" *ngFor="let dish of tempDishInfo" (click)="clickNonLoggedDishCard(dish.chefOwner,dish.id)">
         <p-card>
           <img src={{dish.dishImage}} class="global-image-responsive">
@@ -51,87 +51,87 @@
           </p>
         </p-card>
       </div>
+    </div> -->
+      <!-- {{tempDishInfo|json}} -->
     </div>
-    {{tempDishInfo|json}}
-  </div>
-  <hr class="global-divider">
-  <div class="p-grid location-section">
-    <div class="p-col global-subtitle-text">
-      Location:
-      <div class="chef-text-content">
-        <p>
-          {{foommyInfo.city}}, {{foommyInfo.state}}
-        </p>
-        <img src="http://www.bestplaces.net/images/city/0680854_CA_Tustin.png" class="global-image-responsive"
-          style="max-width: 50vh" alt="tustin map">
+    <hr class="global-divider">
+    <div class="p-grid location-section">
+      <div class="p-col global-subtitle-text">
+        Location:
+        <div class="chef-text-content">
+          <p>
+            {{foommyInfo$.city}}, {{foommyInfo$.state}}
+          </p>
+          <img src="http://www.bestplaces.net/images/city/0680854_CA_Tustin.png" class="global-image-responsive"
+            style="max-width: 50vh" alt="tustin map">
+        </div>
+      </div>
+    </div>
+    <hr class="global-divider">
+    <div class="p-grid how-to-get-there-section">
+      <div class="p-col global-subtitle-text ">
+        How to get there:
+        <div class="chef-text-content">
+          <p>
+            {{foommyInfo$.howToGetThere}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="global-divider">
+    <div class="p-grid hours-section">
+      <div class="p-col global-subtitle-text ">
+        Hours:
+        <div class="chef-text-content">
+          <p>
+            {{foommyInfo$.availability}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="global-divider">
+    <div class="p-grid dining-area-section">
+      <div class="p-col global-subtitle-text ">
+        The Dining Area:
+        <div class="chef-text-content">
+          <p>
+            {{foommyInfo$.theDiningArea}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="global-divider">
+    <div class="p-grid dining-area-section">
+      <div class="p-col global-subtitle-text ">
+        Seating Capacity:
+        <div class="chef-text-content">
+          <p>
+            {{foommyInfo$.seatingCapacity}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="global-divider">
+    <div class="p-grid dining-area-section">
+      <div class="p-col global-subtitle-text ">
+        Prep Time:
+        <div class="chef-text-content">
+          <p>
+            {{foommyInfo$.prepTime}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="global-divider">
+    <div class="p-grid additional-info-section">
+      <div class="p-col global-subtitle-text ">
+        Additional Info:
+        <div class="chef-text-content">
+          <p>
+            {{foommyInfo$.additionalInfo}}
+          </p>
+        </div>
       </div>
     </div>
   </div>
-  <hr class="global-divider">
-  <div class="p-grid how-to-get-there-section">
-    <div class="p-col global-subtitle-text ">
-      How to get there:
-      <div class="chef-text-content">
-        <p>
-          {{foommyInfo.howToGetThere}}
-        </p>
-      </div>
-    </div>
-  </div>
-  <hr class="global-divider">
-  <div class="p-grid hours-section">
-    <div class="p-col global-subtitle-text ">
-      Hours:
-      <div class="chef-text-content">
-        <p>
-          {{foommyInfo.availability}}
-        </p>
-      </div>
-    </div>
-  </div>
-  <hr class="global-divider">
-  <div class="p-grid dining-area-section">
-    <div class="p-col global-subtitle-text ">
-      The Dining Area:
-      <div class="chef-text-content">
-        <p>
-          {{foommyInfo.theDiningArea}}
-        </p>
-      </div>
-    </div>
-  </div>
-  <hr class="global-divider">
-  <div class="p-grid dining-area-section">
-    <div class="p-col global-subtitle-text ">
-      Seating Capacity:
-      <div class="chef-text-content">
-        <p>
-          {{foommyInfo.seatingCapacity}}
-        </p>
-      </div>
-    </div>
-  </div>
-  <hr class="global-divider">
-  <div class="p-grid dining-area-section">
-    <div class="p-col global-subtitle-text ">
-      Prep Time:
-      <div class="chef-text-content">
-        <p>
-          {{foommyInfo.prepTime}}
-        </p>
-      </div>
-    </div>
-  </div>
-  <hr class="global-divider">
-  <div class="p-grid additional-info-section">
-    <div class="p-col global-subtitle-text ">
-      Additional Info:
-      <div class="chef-text-content">
-        <p>
-          {{foommyInfo.additionalInfo}}
-        </p>
-      </div>
-    </div>
-  </div>
-</section> -->
-
+</section>
