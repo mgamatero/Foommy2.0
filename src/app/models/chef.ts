@@ -1,6 +1,6 @@
 export interface ChefModel {
   id: string;
-  image: string;
+  foommyImage: string;
   chefName: string;
   aboutKitchen: string;
   placeDesc: string;

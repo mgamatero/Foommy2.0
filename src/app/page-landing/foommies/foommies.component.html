@@ -1,10 +1,28 @@
-<section class="foommies-signed-on">
-  <p>foommies-signed-on works!</p>
+<section class="foommies-section">
+
+  <!-- Test section ------ -->
+  <!-- <p>foommies-signed-on works!</p>
 <div *ngFor="let x of testFB">
   <p>From firestore ---  {{x.test}}</p>
   <i class="fas fa-fish"></i>
   <i class="fas fa-frog"></i>
   <i class="fas fa-user-ninja vanished"></i>
   <i class="fab fa-facebook"></i>
-</div>
+</div> -->
+
+  {{foommies|json}}
+
+  <div class="global-title-text global-center">Foommies near you - Jeannie this is from Firebase now</div>
+    <div class="p-grid">
+    <div class="p-sm-6 p-md-4" *ngFor="let foommy of foommies">
+      <p-card header={{foommy.chefName}} styleClass="ui-card-shadow" id={{foommy.id}}
+         [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="clickFoommyCard(foommy.id)"><p-header>
+          <img src="Card" src={{foommy.foommyImage}} class="global-responsive-img foommy-card">
+        </p-header>
+        <div>{{foommy.city}}, {{foommy.state}}</div>
+        <div>{{foommy.availability}}</div>
+        <div class="about-kitchen">{{foommy.aboutKitchen}}</div>
+      </p-card>
+    </div>
+  </div>
 </section>

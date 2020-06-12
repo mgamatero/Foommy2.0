@@ -1,10 +1,10 @@
+
 import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
   AngularFirestoreDocument,
 } from '@angular/fire/firestore';
-// import { Recipe } from '../models/recipe';
 import { Observable, Subscriber } from 'rxjs';
 import { of } from 'rxjs';
 // import { AuthService } from "./auth.service";
@@ -17,11 +17,18 @@ export class FoommyService {
   // recipes: Observable<Recipe[]>;
   // recipeByID: Observable<Recipe>;
   // recipeDocument: AngularFirestoreDocument<Recipe>;
-  constructor(public afs: AngularFirestore) { }
+  constructor(public db: AngularFirestore) { }
 
+
+  // TEST ONLY
   fbTest() {
-    return this.afs
+    return this.db
     .collection('test')
     .snapshotChanges();
+  }
+
+  // ----------------------GET ALL FOOMMIES---------------------
+  getAllFoommies(){
+    return this.db.collection('foommies').snapshotChanges();
   }
 }
