@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { FoommyService } from 'src/app/services/foommy.service';
 
 @Component({
-  selector: 'app-foommies-signed-on',
-  templateUrl: './foommies-signed-on.component.html',
-  styleUrls: ['./foommies-signed-on.component.css']
+  selector: 'app-foommies',
+  templateUrl: './foommies.component.html',
+  styleUrls: ['./foommies.component.css']
 })
-export class FoommiesSignedOnComponent implements OnInit {
+export class FoommiesComponent implements OnInit {
   testFB: any [];
   constructor(private afs:FoommyService) { }
 
