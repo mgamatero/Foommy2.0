@@ -14,8 +14,8 @@ import { Observable } from 'rxjs';
 })
 export class PageFoommyDetailsComponent implements OnInit {
   foommyID: string;
-// foommyInfo$: FoommyInfo;
-foommyInfo$;
+foommyInfo$: FoommyInfo;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -32,7 +32,7 @@ foommyInfo$;
 
    //GET 1 FOOMMY PER ID ===> Code dies here
     this.foommyService.getFoommyByID(this.foommyID).subscribe(data=>{
-      this.foommyInfo$ = data.payload.data() as any;
+      this.foommyInfo$ = data.payload.data() as FoommyInfo;
     })
 
 
