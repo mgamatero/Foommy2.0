@@ -42,8 +42,7 @@
 
           Dishes:
           <div class="row">
-      <!-- <div class="p-sm-6 p-md-4" *ngFor="let dish of dishes$" (click)="clickNonLoggedDishCard(dish.chefOwner,dish.id)"> -->
-      <div class="p-sm-6 p-md-4" *ngFor="let dish of dishes$">
+       <div class="p-sm-6 p-md-4" *ngFor="let dish of dishes$" (click)="clickDishCard(chefID,dish.id)">
         <p-card>
           <img src={{dish.dishImage}} class="global-image-responsive">
           <p-header>

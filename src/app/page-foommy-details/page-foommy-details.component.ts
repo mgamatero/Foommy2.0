@@ -50,7 +50,7 @@ export class PageFoommyDetailsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  clickNonLoggedDishCard(_chefId, _dishId) {
+  clickDishCard(_chefId, _dishId) {
     this.router.navigate([`dishDetails/${_chefId}/${_dishId}`]);
   }
 }

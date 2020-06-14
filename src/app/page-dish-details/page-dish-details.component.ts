@@ -4,10 +4,10 @@ import { NonLoggedOnDataService } from '../services/non-logged-on-data.service';
 
 @Component({
   selector: 'app-page-not-logged-dish-details',
-  templateUrl: './page-not-logged-dish-details.component.html',
-  styleUrls: ['./page-not-logged-dish-details.component.css']
+  templateUrl: './page-dish-details.component.html',
+  styleUrls: ['./page-dish-details.component.css']
 })
-export class PageNotLoggedDishDetailsComponent implements OnInit {
+export class PageDishDetailsComponent implements OnInit {
 tempChefId:string;
 tempDishId:string;
 tempChef:any;

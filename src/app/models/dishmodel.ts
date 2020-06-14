@@ -1,10 +1,13 @@
-export interface DishModel{
-chefOwnerID:string;
-dishName:string;
-dishType:string;
-dishDescription:string;
-ingredients:string[];
-dishImage:string
+export interface DishModel {
+  id?:string;
+  chefOwnerID: string;
+  dishName: string;
+  dishType: string;
+  cuisineType: string;
+  dishDescription: string;
+  ingredients: string[];
+  allergens: string[];
+  dishImage: string;
 }
 
 // {
@@ -21,5 +24,8 @@ dishImage:string
 //     "Carrots",
 //     "Seasoning"
 //   ],
+// "allergens":[
+// "eggs"
+// ],
 //   "dishImage": "https://i.pinimg.com/originals/2b/aa/bb/2baabb6129c498f48ac4118ae96edcdc.jpg"
 // }

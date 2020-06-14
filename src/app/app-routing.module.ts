@@ -5,7 +5,7 @@ import {PageWhyfoommyComponent} from './page-whyfoommy/page-whyfoommy.component'
 import {PageBecomeAChefComponent} from './page-become-a-chef/page-become-a-chef.component';
 import {PageNotfoundComponent} from './page-notfound/page-notfound.component';
 import {PageFoommyDetailsComponent} from './page-foommy-details/page-foommy-details.component';
-import {PageNotLoggedDishDetailsComponent} from './page-not-logged-dish-details/page-not-logged-dish-details.component';
+import {PageDishDetailsComponent} from './page-dish-details/page-dish-details.component';
 import {PageTermsOfServiceComponent} from './page-terms-of-service/page-terms-of-service.component';
 import {PagePrivacyPolicyComponent} from './page-privacy-policy/page-privacy-policy.component';
 
@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: "become-a-chef", component: PageBecomeAChefComponent },
   { path: "sample-foomy/:id", component: PageBecomeAChefComponent },
   { path: "foommyDetails/:id", component: PageFoommyDetailsComponent },
-  { path: "nonLoggedDishDetails/:chefId/:dishId", component: PageNotLoggedDishDetailsComponent },
+  { path: "dishDetails/:chefId/:dishId", component: PageDishDetailsComponent },
   { path: "termsOfService", component: PageTermsOfServiceComponent },
   { path: "privacyPolicy", component: PagePrivacyPolicyComponent },
   {path: '**',component: PageNotfoundComponent}

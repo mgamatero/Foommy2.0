@@ -26,14 +26,12 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 
 import { FoommiesComponent } from './page-landing/foommies/foommies.component';
-import { FoommiesNotSignedOnComponent } from './page-landing/foommies-not-signed-on/foommies-not-signed-on.component';
 import { PageWhyfoommyComponent } from './page-whyfoommy/page-whyfoommy.component';
 import { PageBecomeAChefComponent } from './page-become-a-chef/page-become-a-chef.component';
 
 import { NonLoggedOnDataService } from './services/non-logged-on-data.service';
-import { NotLoggedSampleFoommyComponent } from './not-logged-sample-foommy/not-logged-sample-foommy.component';
 import { PageFoommyDetailsComponent } from './page-foommy-details/page-foommy-details.component';
-import { PageNotLoggedDishDetailsComponent } from './page-not-logged-dish-details/page-not-logged-dish-details.component';
+import { PageDishDetailsComponent } from './page-dish-details/page-dish-details.component';
 import { PageTermsOfServiceComponent } from './page-terms-of-service/page-terms-of-service.component';
 import { PagePrivacyPolicyComponent } from './page-privacy-policy/page-privacy-policy.component';
 
@@ -50,9 +48,8 @@ import { PagePrivacyPolicyComponent } from './page-privacy-policy/page-privacy-p
     FoommiesComponent,
     PageWhyfoommyComponent,
     PageBecomeAChefComponent,
-    NotLoggedSampleFoommyComponent,
     PageFoommyDetailsComponent,
-    PageNotLoggedDishDetailsComponent,
+    PageDishDetailsComponent,
     PageTermsOfServiceComponent,
     PagePrivacyPolicyComponent,
   ],
