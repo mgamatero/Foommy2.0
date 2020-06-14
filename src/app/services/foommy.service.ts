@@ -36,4 +36,30 @@ export class FoommyService {
   getFoommyByID(id){
     return this.db.doc(`foommies/${id}`).snapshotChanges();
   }
+
+
+
+
+  // ---------------------  GET ALL DISHES  -----------------
+  getAllDishes(){
+    return this.db.collection('dishes').snapshotChanges();
+  }
+
+  // ----------------  GET ALL DISHES BY CHEFID -----------------
+getAllDishesByChefID(chefID){
+var allDishes = this.getAllDishes();
+
 }
+
+
+
+}
+
+// getAllDishesByChefID(id): any {
+//   const dishByChefId = this.nonLoggedOnDish.filter((dishes) => {
+//     return dishes.chefOwner === id;
+//   });
+//   // console.log('tempchefbyid: ', byId)
+//   return dishByChefId;
+// }
+

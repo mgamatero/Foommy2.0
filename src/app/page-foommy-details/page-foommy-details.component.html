@@ -41,8 +41,9 @@
       <div class="p-col global-subtitle-text">
 
           Dishes:
-          <!-- <div class="row">
-      <div class="p-sm-6 p-md-4" *ngFor="let dish of tempDishInfo" (click)="clickNonLoggedDishCard(dish.chefOwner,dish.id)">
+          <div class="row">
+      <!-- <div class="p-sm-6 p-md-4" *ngFor="let dish of dishes$" (click)="clickNonLoggedDishCard(dish.chefOwner,dish.id)"> -->
+      <div class="p-sm-6 p-md-4" *ngFor="let dish of dishes$">
         <p-card>
           <img src={{dish.dishImage}} class="global-image-responsive">
           <p-header>
@@ -55,8 +56,8 @@
           </p>
         </p-card>
       </div>
-    </div> -->
-          <!-- {{tempDishInfo|json}} -->
+    </div>
+         <!-- {{tempDishInfo|json}} -->
 
       </div>
     </div>
