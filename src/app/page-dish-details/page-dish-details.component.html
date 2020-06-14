@@ -1,8 +1,3 @@
-
-<!--
-CHEF ID == {{tempChefId}}
-DISH ID == {{tempDishId}} -->
-
 <div class="section-dish-details">
  <div class="p-grid">
    <div class="p-md-1"></div>
@@ -12,22 +7,20 @@ DISH ID == {{tempDishId}} -->
      <div class="global-subtitle-text dish-title">
        {{dishInfo$.dishName}}
       </div>
-
       <div class="wrapper-dish-info">
         <div class="p-grid">
-
           <div class="dish-info p-col-8">
             <div>
-              <i class="fas fa-utensils"></i>
-              <span class="lead pl-1">{{dishInfo$.dishType}}</span>
+              <i class="fas fa-utensils"> Dish Type: </i>
+              <span class="small pl-1">{{dishInfo$.dishType}}</span>
             </div>
             <div>
-              <i class="fas fa-utensils"></i>
-              <span class="lead pl-1">{{dishInfo$.cuisineType}}</span>
+              <i class="fas fa-utensils"> Cuisine: </i>
+              <span class="small pl-1">{{dishInfo$.cuisineType}}</span>
             </div>
             <div>
-              <i class="fas fa-utensils"></i>
-              <!-- <span class="lead pl-1">{{tempDish[0].dishType}}</span> -->
+              <i class="fas fa-utensils"> Allergens: </i>
+              <span class="small pl-1">{{dishInfo$.allergens}}</span>
             </div>
           </div>
           <div class="dish-chef-info p-col-4">
@@ -36,29 +29,27 @@ DISH ID == {{tempDishId}} -->
           </div>
         </div>
       </div>
-
-
       <hr>
       <div class="global-subtitle-text main-ingredients-title">
         Main Ingredients
       </div>
-      <!-- <div *ngFor="let ingredient of tempDish[0].ingredients" class="ingredients">
+      <div *ngFor="let ingredient of dishInfo$.ingredients" class="ingredients">
 
-        <div>{{ingredient}}</div> -->
+        <div>{{ingredient}}</div>
        </div>
     </div>
-    <!-- <div class="p-md-5 right-section p-align-center">
+    <div class="p-md-5 right-section p-align-center">
       <div class="p-grid">
         <div class="p-col-12">
-          <img [src]="tempDish[0].dishImage" alt="dishimage" class="global-image-responsive  dish-image">
+          <img [src]="dishInfo$.dishImage" alt="dishimage" class="global-image-responsive  dish-image">
         </div>
         <div class="p-col-12">
           <p class="dish-description">
-            {{tempDish[0].dishDescription}}
+            {{dishInfo$.dishDescription}}
           </p>
         </div>
       </div>
-    </div> -->
+    </div>
     <div class="p-md-1"></div>
   </div>
 
