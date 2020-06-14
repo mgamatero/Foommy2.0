@@ -1,9 +1,10 @@
-.non-logged-chef-details-section{
-  /* margin:3rem; */
-  padding:1rem;
-  /* border:solid 1px black; */
-  background-color: #fdd;
-}
+.chef-details-section{
+   padding:1rem;
+    background-color: #fdd;
+    display: flex;
+    justify-content: center;
+
+   }
 
 .chef-image-icon{
   border-radius: 50%;

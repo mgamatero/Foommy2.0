@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import { FoommyService} from '../services/foommy.service';
-import { FoommyService } from 'src/app/services/foommy.service';
-import { FoommyInfo } from '../../models/foommyinfo';
+import { ChefModel } from '../../models/chefModel';
 import { Router } from '@angular/router';
+import { FoommyService } from '../../services/foommy.service';
 
 @Component({
   selector: 'app-foommies',
@@ -11,29 +10,17 @@ import { Router } from '@angular/router';
 })
 export class FoommiesComponent implements OnInit {
   testFB: any[];
-  foommies: FoommyInfo[];
+  chefs: ChefModel[];
   constructor(private foomyService: FoommyService, private router:Router) {}
 
   ngOnInit(): void {
 
-    // ------------------------- TEST CONNECTION -----------------------
-    // this.afs.fbTest().subscribe((data)=>{
-    //   this.testFB = data.map((e) => {
-    //     // console.log(data[1].payload.doc.id)
-    //     return {
-    //       id: e.payload.doc.id,
-    //       ...(e.payload.doc.data() as any),
-    //     } as any;
-    //   });
-    // })
-    // console.log(this.testFB)
-
     this.foomyService.getAllFoommies().subscribe((data) => {
-      this.foommies = data.map((e) => {
+      this.chefs = data.map((e) => {
         return {
           id: e.payload.doc.id,
-          ...(e.payload.doc.data() as FoommyInfo),
-        } as FoommyInfo;
+          ...(e.payload.doc.data() as ChefModel),
+        } as ChefModel;
       });
     });
   }

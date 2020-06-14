@@ -14,14 +14,14 @@
 
   <div class="global-title-text global-center">Foommies near you - Jeannie this is from Firebase now</div>
     <div class="p-grid">
-    <div class="p-sm-6 p-md-4" *ngFor="let foommy of foommies">
-      <p-card header={{foommy.chefName}} styleClass="ui-card-shadow" id={{foommy.id}}
-         [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="clickFoommyCard(foommy.id)"><p-header>
-          <img src="Card" src={{foommy.foommyImage}} class="global-responsive-img foommy-card">
+    <div class="p-sm-6 p-md-4" *ngFor="let chef of chefs">
+      <p-card header={{chef.chefName}} styleClass="ui-card-shadow" id={{chef.id}}
+         [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="clickFoommyCard(chef.id)"><p-header>
+          <img src="Card" src={{chef.foommyImage}} class="global-responsive-img foommy-card">
         </p-header>
-        <div>{{foommy.city}}, {{foommy.state}}</div>
-        <div>{{foommy.availability}}</div>
-        <div class="about-kitchen">{{foommy.aboutKitchen}}</div>
+        <div>{{chef.city}}, {{chef.state}}</div>
+        <div>{{chef.availability}}</div>
+        <div class="about-kitchen">{{chef.aboutKitchen}}</div>
       </p-card>
     </div>
   </div>

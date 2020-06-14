@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { NonLoggedOnDataService } from '../services/non-logged-on-data.service';
 import {CardModule} from 'primeng/card';
-import { ChefModel } from '../models/chef';
+import{ ChefModel} from '../models/chefModel';
 import { FoommyService } from '../services/foommy.service';
 import { Observable } from 'rxjs';
 
@@ -13,8 +13,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./page-foommy-details.component.css'],
 })
 export class PageFoommyDetailsComponent implements OnInit {
-  foommyID: string;
-foommyInfo$: ChefModel;
+  chefID: string;
+chefInfo$: ChefModel;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +23,7 @@ foommyInfo$: ChefModel;
   ) {
     //GET FOOMMY ID
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.foommyID = params.get('id');
+      this.chefID = params.get('id');
     });
 
 
@@ -31,9 +31,9 @@ foommyInfo$: ChefModel;
 
 
    //GET 1 FOOMMY PER ID ===> Code dies here
-    this.foommyService.getFoommyByID(this.foommyID).subscribe(data=>{
-      this.foommyInfo$ = data.payload.data() as ChefModel;
-      console.log(this.foommyInfo$.aboutKitchen)
+    this.foommyService.getFoommyByID(this.chefID).subscribe(data=>{
+      this.chefInfo$ = data.payload.data() as ChefModel;
+      console.log(this.chefInfo$.aboutKitchen)
     })
 
 
