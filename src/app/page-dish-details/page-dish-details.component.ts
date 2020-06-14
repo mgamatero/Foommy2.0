@@ -1,44 +1,53 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { NonLoggedOnDataService } from '../services/non-logged-on-data.service';
+import { FoommyService } from '../services/foommy.service';
+import { ChefModel } from '../models/chefModel';
+import { DishModel } from '../models/dishModel';
+import { Observable } from 'rxjs';
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-page-not-logged-dish-details',
   templateUrl: './page-dish-details.component.html',
-  styleUrls: ['./page-dish-details.component.css']
+  styleUrls: ['./page-dish-details.component.css'],
 })
 export class PageDishDetailsComponent implements OnInit {
-tempChefId:string;
-tempDishId:string;
-tempChef:any;
-tempDish:any;
+  chefID: string;
+  dishID: string;
+  chefInfo$: ChefModel;
+  dishInfo$: DishModel;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private tempData: NonLoggedOnDataService
+    private tempData: NonLoggedOnDataService,
+    private foommyService: FoommyService
   ) {
+    //Chef and Dish IDs here
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.chefID = params.get('chefId');
+      this.dishID = params.get('dishId');
+    });
 
-//Chef and Dish IDs here
-this.route.paramMap.subscribe((params: ParamMap) => {
-  this.tempChefId = params.get('chefId');
-  this.tempDishId = params.get('dishId');
-});
+    //Retrieve Chef Info
+    this.foommyService.getFoommyByID(this.chefID).subscribe((data) => {
+      this.chefInfo$ = data.payload.data() as ChefModel;
+    });
 
-this.tempChef = this.tempData.getNonLoggedOnChefByID(
-  this.tempChefId
-)[0];
+    //Retrieve Dish Info
+    this.foommyService.getDishByID(this.dishID).subscribe((data) => {
+      this.dishInfo$ = data.payload.data() as DishModel;
+    });
 
 
-//Dish data here - CHEAT for now.  Hardcoded in Service
-this.tempDish = this.tempData.getDishByDishID(this.tempDishId);
-console.log(this.tempDish)
   }
 
-  ngOnInit(): void {
-  }
 
-  clickNonLoggedChefCard(id){
+
+  ngOnInit(): void {}
+
+  clickNonLoggedChefCard(id) {
     this.router.navigate(['nonLoggedChefDetails/', id]);
   }
 }

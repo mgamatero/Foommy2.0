@@ -48,18 +48,14 @@ export class FoommyService {
   // ----------------  GET ALL DISHES BY CHEFID -----------------
 getAllDishesByChefID(chefID){
 var allDishes = this.getAllDishes();
+}
+
+  // ----------------------GET DISH BY ID---------------------
+  getDishByID(id){
+    return this.db.doc(`dishes/${id}`).snapshotChanges();
+  }
+
 
 }
 
-
-
-}
-
-// getAllDishesByChefID(id): any {
-//   const dishByChefId = this.nonLoggedOnDish.filter((dishes) => {
-//     return dishes.chefOwner === id;
-//   });
-//   // console.log('tempchefbyid: ', byId)
-//   return dishByChefId;
-// }
 
