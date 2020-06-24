@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {PageLandingComponent} from './page-landing/page-landing.component';
 import {PageWhyfoommyComponent} from './page-whyfoommy/page-whyfoommy.component';
 import {PageBecomeAChefComponent} from './page-become-a-chef/page-become-a-chef.component';
+import {PageBecomeAChefFormComponent} from './page-become-a-chef-form/page-become-a-chef-form.component';
 import {PageNotfoundComponent} from './page-notfound/page-notfound.component';
 import {PageFoommyDetailsComponent} from './page-foommy-details/page-foommy-details.component';
 import {PageDishDetailsComponent} from './page-dish-details/page-dish-details.component';
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: "home", component: PageLandingComponent },
   { path: "whyfoommy", component: PageWhyfoommyComponent },
   { path: "become-a-chef", component: PageBecomeAChefComponent },
-  { path: "sample-foomy/:id", component: PageBecomeAChefComponent },
+  { path: "become-a-chef/become-a-chef-form", component: PageBecomeAChefFormComponent },
   { path: "foommyDetails/:id", component: PageFoommyDetailsComponent },
   { path: "dishDetails/:chefId/:dishId", component: PageDishDetailsComponent },
   { path: "termsOfService", component: PageTermsOfServiceComponent },

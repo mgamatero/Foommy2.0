@@ -34,6 +34,7 @@ import { PageFoommyDetailsComponent } from './page-foommy-details/page-foommy-de
 import { PageDishDetailsComponent } from './page-dish-details/page-dish-details.component';
 import { PageTermsOfServiceComponent } from './page-terms-of-service/page-terms-of-service.component';
 import { PagePrivacyPolicyComponent } from './page-privacy-policy/page-privacy-policy.component';
+import { PageBecomeAChefFormComponent } from './page-become-a-chef-form/page-become-a-chef-form.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { PagePrivacyPolicyComponent } from './page-privacy-policy/page-privacy-p
     PageDishDetailsComponent,
     PageTermsOfServiceComponent,
     PagePrivacyPolicyComponent,
+    PageBecomeAChefFormComponent,
   ],
   imports: [
     BrowserModule,
