@@ -13,7 +13,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 
-import { FoommyService } from './services/foommy.service';
 import { PageLandingComponent } from './page-landing/page-landing.component';
 import { HeaderComponent } from './page-landing/header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -29,12 +28,15 @@ import { FoommiesComponent } from './page-landing/foommies/foommies.component';
 import { PageWhyfoommyComponent } from './page-whyfoommy/page-whyfoommy.component';
 import { PageBecomeAChefComponent } from './page-become-a-chef/page-become-a-chef.component';
 
-import { NonLoggedOnDataService } from './services/non-logged-on-data.service';
 import { PageFoommyDetailsComponent } from './page-foommy-details/page-foommy-details.component';
 import { PageDishDetailsComponent } from './page-dish-details/page-dish-details.component';
 import { PageTermsOfServiceComponent } from './page-terms-of-service/page-terms-of-service.component';
 import { PagePrivacyPolicyComponent } from './page-privacy-policy/page-privacy-policy.component';
 import { PageBecomeAChefFormComponent } from './page-become-a-chef-form/page-become-a-chef-form.component';
+
+import { FoommyService } from './services/foommy.service';
+import { AuthService } from './services/auth.service';
+import { PageLoginComponent } from './page-login/page-login.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import { PageBecomeAChefFormComponent } from './page-become-a-chef-form/page-bec
     PageTermsOfServiceComponent,
     PagePrivacyPolicyComponent,
     PageBecomeAChefFormComponent,
+    PageLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,7 @@ import { PageBecomeAChefFormComponent } from './page-become-a-chef-form/page-bec
     ButtonModule,
     CardModule,
   ],
-  providers: [FoommyService, NonLoggedOnDataService],
+  providers: [FoommyService, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

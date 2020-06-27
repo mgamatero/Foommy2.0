@@ -9,6 +9,7 @@ import {PageFoommyDetailsComponent} from './page-foommy-details/page-foommy-deta
 import {PageDishDetailsComponent} from './page-dish-details/page-dish-details.component';
 import {PageTermsOfServiceComponent} from './page-terms-of-service/page-terms-of-service.component';
 import {PagePrivacyPolicyComponent} from './page-privacy-policy/page-privacy-policy.component';
+import {PageLoginComponent} from './page-login/page-login.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: "dishDetails/:chefId/:dishId", component: PageDishDetailsComponent },
   { path: "termsOfService", component: PageTermsOfServiceComponent },
   { path: "privacyPolicy", component: PagePrivacyPolicyComponent },
+  { path: "login", component: PageLoginComponent },
   {path: '**',component: PageNotfoundComponent}
 ];
 
