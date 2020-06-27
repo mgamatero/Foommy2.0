@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-menubar',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menubar.component.css']
 })
 export class MenubarComponent implements OnInit {
-
-  constructor() { }
+logInStatus:boolean;
+  constructor(public auth:AuthService) { }
 
   ngOnInit(): void {
+    this.auth.isLogged().subscribe(status=>this.logInStatus = status as any)
   }
 
+  logOut(){
+    this.auth.emailLogout();
+  }
 }

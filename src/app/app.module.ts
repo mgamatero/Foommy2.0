@@ -23,6 +23,8 @@ import { FeedbackComponent } from './page-landing/feedback/feedback.component';
 
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 
 import { FoommiesComponent } from './page-landing/foommies/foommies.component';
 import { PageWhyfoommyComponent } from './page-whyfoommy/page-whyfoommy.component';
@@ -33,10 +35,12 @@ import { PageDishDetailsComponent } from './page-dish-details/page-dish-details.
 import { PageTermsOfServiceComponent } from './page-terms-of-service/page-terms-of-service.component';
 import { PagePrivacyPolicyComponent } from './page-privacy-policy/page-privacy-policy.component';
 import { PageBecomeAChefFormComponent } from './page-become-a-chef-form/page-become-a-chef-form.component';
+import { PageLoginComponent } from './page-login/page-login.component';
 
 import { FoommyService } from './services/foommy.service';
 import { AuthService } from './services/auth.service';
-import { PageLoginComponent } from './page-login/page-login.component';
+import { AlertService } from './services/alert.service';
+
 
 @NgModule({
   declarations: [
@@ -74,8 +78,10 @@ import { PageLoginComponent } from './page-login/page-login.component';
 
     ButtonModule,
     CardModule,
+    MessageModule,
+    MessagesModule
   ],
-  providers: [FoommyService, AuthService],
+  providers: [FoommyService, AuthService, AlertService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

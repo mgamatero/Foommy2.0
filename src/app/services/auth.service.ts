@@ -27,4 +27,8 @@ export class AuthService {
   isLogged(){
     return this.afAuth.authState
   }
+
+  getUser(){
+    return this.afAuth.tenantId
+  }
 }
