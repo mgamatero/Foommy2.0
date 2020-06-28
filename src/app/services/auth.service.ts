@@ -1,14 +1,29 @@
 import { Injectable } from '@angular/core';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+  AngularFirestoreDocument,
+} from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
-import { Observable } from 'rxjs';
+import { Observable, Subscriber } from 'rxjs';
+import { of } from 'rxjs';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
 currentUserInfo:any;
-uid;
+uid = this.afAuth.authState.pipe(
+  map(authState=>{
+    if (!authState){
+      return null
+      } else {
+        return authState.uid
+      }
+     })
+);
 
 
 
@@ -18,7 +33,7 @@ uid;
     afAuth.onAuthStateChanged(user=>{
       if (user) {
          this.currentUserInfo = user;
-         this.uid = user.uid;
+
       }
     })
   }
@@ -29,7 +44,7 @@ uid;
         (userData) => {
           resolve(userData);
           this.currentUserInfo = userData;
-          this.uid = userData.user.uid;
+
         },
         (err) => reject(err)
       );
