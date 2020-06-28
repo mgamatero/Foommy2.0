@@ -13,9 +13,7 @@ emailName:string;
 
   ngOnInit(): void {
     this.auth.isLogged().subscribe(status=>this.loggedIn = status as any)
-    this.auth.getUserEmail().subscribe(email=>this.emailName = email);
-    console.log("menubar" + this.emailName)
-  }
+   }
 
   logOut(){
     this.auth.emailLogout();

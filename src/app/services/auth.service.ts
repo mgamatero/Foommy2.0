@@ -26,9 +26,9 @@ currentUserInfo:any;
       this.afAuth.signInWithEmailAndPassword(email, password).then(
         (userData) => {
           resolve(userData);
-          console.log(userData);
-          console.log(userData.user.email);
-          this.userEmail = userData.user.email;
+          // console.log(userData);
+          // console.log(userData.user.email);
+
         },
         (err) => reject(err)
       );
@@ -40,8 +40,8 @@ currentUserInfo:any;
       this.afAuth.createUserWithEmailAndPassword(email, password).then(
         (userData) => {
           resolve(userData);
-          console.log(userData.user.email);
-          this.userEmail = userData.user.email;
+          // console.log(userData.user.email);
+
         },
         (err) => reject(err)
       );

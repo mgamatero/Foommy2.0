@@ -55,8 +55,6 @@ export class PageLoginComponent implements OnInit {
     this.auth
       .emailLogin(this.f.username.value, this.f.password.value)
       .then((data) => {
-        console.log('From email login: '+ this.auth.getUserEmail())
-        window.alert("logged in === " + this.auth.getUserEmail())
         this.router.navigate(['/'])
       },
       err=>{

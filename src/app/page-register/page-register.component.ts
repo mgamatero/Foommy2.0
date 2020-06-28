@@ -46,14 +46,12 @@ export class PageRegisterComponent implements OnInit {
             return;
         }
 
-        this.loading = true;
-        this.auth.emailSignUp(this.f.username.value, this.f.password.value)
+              this.auth.emailSignUp(this.f.username.value, this.f.password.value)
         .then((data) => {
-          alert("logged in as")
-          this.router.navigate(['/'])
+                  this.router.navigate(['/'])
         },
         err=>{
-                  alert(err.message)
+                  window.alert(err.message)
                   this.registerForm.reset();
         });
     }
