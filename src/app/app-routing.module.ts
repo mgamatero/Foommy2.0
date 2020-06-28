@@ -10,6 +10,7 @@ import {PageDishDetailsComponent} from './page-dish-details/page-dish-details.co
 import {PageTermsOfServiceComponent} from './page-terms-of-service/page-terms-of-service.component';
 import {PagePrivacyPolicyComponent} from './page-privacy-policy/page-privacy-policy.component';
 import {PageLoginComponent} from './page-login/page-login.component';
+import {PageRegisterComponent} from './page-register/page-register.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: "termsOfService", component: PageTermsOfServiceComponent },
   { path: "privacyPolicy", component: PagePrivacyPolicyComponent },
   { path: "login", component: PageLoginComponent },
+  { path: "register", component: PageRegisterComponent },
   {path: '**',component: PageNotfoundComponent}
 ];
 

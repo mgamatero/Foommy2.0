@@ -40,6 +40,7 @@ import { PageLoginComponent } from './page-login/page-login.component';
 import { FoommyService } from './services/foommy.service';
 import { AuthService } from './services/auth.service';
 import { AlertService } from './services/alert.service';
+import { PageRegisterComponent } from './page-register/page-register.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { AlertService } from './services/alert.service';
     PagePrivacyPolicyComponent,
     PageBecomeAChefFormComponent,
     PageLoginComponent,
+    PageRegisterComponent,
   ],
   imports: [
     BrowserModule,

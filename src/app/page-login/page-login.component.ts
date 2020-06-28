@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
+
 
 import { AuthService } from '../services/auth.service';
-import { AlertService } from '../services/alert.service';
-import { database } from 'firebase';
+
 
 @Component({
   selector: 'app-page-login',
@@ -23,7 +22,8 @@ export class PageLoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private auth: AuthService,
-    private alertService: AlertService
+
+
   ) {
     // redirect to home if already logged in
     // if (this.auth.isLogged) {
@@ -59,6 +59,7 @@ export class PageLoginComponent implements OnInit {
       .then((data) => {
         alert("logged in as " + this.auth.getUser())
         this.router.navigate(['/'])
+
       },
       err=>{
                 alert(err.message)
