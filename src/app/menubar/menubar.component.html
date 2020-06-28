@@ -12,15 +12,19 @@
       <li class="nav-item active">
         <a class="nav-link" href="#" routerLink="recipes" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Sign up</a>
       </li>
-      <li *ngIf="!logInStatus" class="nav-item active">
+      <li *ngIf="!loggedIn" class="nav-item active">
         <a class="nav-link" href="#" routerLink="login" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Login</a>
       </li>
-      <li *ngIf="logInStatus" class="nav-item active">
+      <li *ngIf="loggedIn" class="nav-item active">
         <a class="nav-link" href="#" routerLink="login" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="logOut()">Logout</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#" routerLink="whyfoommy" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Why Foommy</a>
       </li>
+      <li *ngIf="loggedIn" class="nav-item active">
+        <a class="nav-link" href="#"><i class="fas fa-user user-icon"><span class="user-name">{{auth.currentUserInfo.email}}</span></i></a>
+      </li>
+
      </ul>
   </div>
 </nav>

@@ -33,10 +33,8 @@ export class PageLoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: [''],
-      password: [''],
-      // username: ['', Validators.required],
-      // password: ['', Validators.required],
+       username: ['', Validators.required],
+      password: ['', Validators.required],
     });
   }
 
@@ -57,12 +55,12 @@ export class PageLoginComponent implements OnInit {
     this.auth
       .emailLogin(this.f.username.value, this.f.password.value)
       .then((data) => {
-        alert("logged in as " + this.auth.getUser())
+        console.log('From email login: '+ this.auth.getUserEmail())
+        window.alert("logged in === " + this.auth.getUserEmail())
         this.router.navigate(['/'])
-
       },
       err=>{
-                alert(err.message)
+                window.alert(err.message)
                 this.loginForm.reset();
       });
         }

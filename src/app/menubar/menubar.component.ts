@@ -7,11 +7,14 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./menubar.component.css']
 })
 export class MenubarComponent implements OnInit {
-logInStatus:boolean;
+loggedIn:boolean;
+emailName:string;
   constructor(public auth:AuthService) { }
 
   ngOnInit(): void {
-    this.auth.isLogged().subscribe(status=>this.logInStatus = status as any)
+    this.auth.isLogged().subscribe(status=>this.loggedIn = status as any)
+    this.auth.getUserEmail().subscribe(email=>this.emailName = email);
+    console.log("menubar" + this.emailName)
   }
 
   logOut(){

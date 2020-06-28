@@ -4,7 +4,9 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-// import { AlertService, UserService, AuthenticationService } from '../_services';
+import { AuthService } from '../services/auth.service';
+
+
 
 
 @Component({
@@ -20,15 +22,9 @@ export class PageRegisterComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private router: Router,
-        // private authenticationService: AuthenticationService,
-        // private userService: UserService,
-        // private alertService: AlertService
-    ) {
-        // redirect to home if already logged in
-        // if (this.authenticationService.currentUserValue) {
-        //     this.router.navigate(['/']);
-        // }
-    }
+        private auth:AuthService
+    )
+    {}
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
@@ -43,7 +39,7 @@ export class PageRegisterComponent implements OnInit {
     get f() { return this.registerForm.controls; }
 
     onSubmit() {
-        this.submitted = true;
+        // this.submitted = true;
 
         // stop here if form is invalid
         if (this.registerForm.invalid) {
@@ -51,17 +47,15 @@ export class PageRegisterComponent implements OnInit {
         }
 
         this.loading = true;
-        // this.userService.register(this.registerForm.value)
-        //     .pipe(first())
-        //     .subscribe(
-        //         data => {
-        //             this.alertService.success('Registration successful', true);
-        //             this.router.navigate(['/login']);
-        //         },
-        //         error => {
-        //             this.alertService.error(error);
-        //             this.loading = false;
-        //         });
+        this.auth.emailSignUp(this.f.username.value, this.f.password.value)
+        .then((data) => {
+          alert("logged in as")
+          this.router.navigate(['/'])
+        },
+        err=>{
+                  alert(err.message)
+                  this.registerForm.reset();
+        });
     }
 }
 
