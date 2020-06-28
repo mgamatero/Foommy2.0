@@ -32,7 +32,7 @@ export class PageFoommyDetailsComponent implements OnInit {
       this.chefInfo$ = data.payload.data() as ChefModel;
     });
 
-    //Dish data here - CHEAT for now.  Hardcoded in Service
+
     this.foommyService.getAllDishes().subscribe((dishes) => {
       var allDishes = dishes.map((e) => {
         return {

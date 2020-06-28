@@ -5,6 +5,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AuthService } from '../services/auth.service';
+import { FoommyService } from '../services/foommy.service';
+import { UserObjService } from '../services/user-obj.service';
 
 
 
@@ -22,7 +24,9 @@ export class PageRegisterComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private router: Router,
-        private auth:AuthService
+        private auth:AuthService,
+        private foomyService:FoommyService,
+        private userObjService:UserObjService,
     )
     {}
 
@@ -45,9 +49,10 @@ export class PageRegisterComponent implements OnInit {
         if (this.registerForm.invalid) {
             return;
         }
-
               this.auth.emailSignUp(this.f.username.value, this.f.password.value)
         .then((data) => {
+                  this.userObjService.createUserObject(this.auth.currentUserInfo.uid)
+                  // console.log('CurrentUserInfo - '+this.auth.currentUserInfo.uid)
                   this.router.navigate(['/'])
         },
         err=>{

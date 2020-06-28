@@ -38,8 +38,6 @@ export class FoommyService {
   }
 
 
-
-
   // ---------------------  GET ALL DISHES  -----------------
   getAllDishes(){
     return this.db.collection('dishes').snapshotChanges();
@@ -54,8 +52,6 @@ var allDishes = this.getAllDishes();
   getDishByID(id){
     return this.db.doc(`dishes/${id}`).snapshotChanges();
   }
-
-
 }
 
 

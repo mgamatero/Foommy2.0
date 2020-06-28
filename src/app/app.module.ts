@@ -36,11 +36,12 @@ import { PageTermsOfServiceComponent } from './page-terms-of-service/page-terms-
 import { PagePrivacyPolicyComponent } from './page-privacy-policy/page-privacy-policy.component';
 import { PageBecomeAChefFormComponent } from './page-become-a-chef-form/page-become-a-chef-form.component';
 import { PageLoginComponent } from './page-login/page-login.component';
+import { PageRegisterComponent } from './page-register/page-register.component';
 
 import { FoommyService } from './services/foommy.service';
 import { AuthService } from './services/auth.service';
 import { AlertService } from './services/alert.service';
-import { PageRegisterComponent } from './page-register/page-register.component';
+import { UserObjService } from './services/user-obj.service';
 
 
 @NgModule({
@@ -83,7 +84,7 @@ import { PageRegisterComponent } from './page-register/page-register.component';
     MessageModule,
     MessagesModule
   ],
-  providers: [FoommyService, AuthService, AlertService],
+  providers: [FoommyService, AuthService, AlertService, UserObjService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

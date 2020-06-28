@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 currentUserInfo:any;
+uid;
 
 
 
@@ -17,6 +18,7 @@ currentUserInfo:any;
     afAuth.onAuthStateChanged(user=>{
       if (user) {
          this.currentUserInfo = user;
+         this.uid = user.uid;
       }
     })
   }
@@ -26,9 +28,8 @@ currentUserInfo:any;
       this.afAuth.signInWithEmailAndPassword(email, password).then(
         (userData) => {
           resolve(userData);
-          // console.log(userData);
-          // console.log(userData.user.email);
-
+          this.currentUserInfo = userData;
+          this.uid = userData.user.uid;
         },
         (err) => reject(err)
       );
@@ -40,7 +41,7 @@ currentUserInfo:any;
       this.afAuth.createUserWithEmailAndPassword(email, password).then(
         (userData) => {
           resolve(userData);
-          // console.log(userData.user.email);
+          console.log(userData.user.uid);
 
         },
         (err) => reject(err)
@@ -55,7 +56,9 @@ currentUserInfo:any;
   isLogged() {
     return this.afAuth.authState;
   }
-
+getCurrentUser(){
+  return this.afAuth.currentUser;
+}
   googleLogin() {
     return new Promise((resolve, reject) => {
       this.afAuth.signInWithPopup(new auth.GoogleAuthProvider()).then(
@@ -67,4 +70,7 @@ currentUserInfo:any;
       );
     });
   }
+
+
+
 }
