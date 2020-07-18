@@ -55,6 +55,7 @@ export class PageLoginComponent implements OnInit {
     this.auth
       .emailLogin(this.f.username.value, this.f.password.value)
       .then((data) => {
+        console.log({data});
         this.router.navigate(['/'])
       },
       err=>{

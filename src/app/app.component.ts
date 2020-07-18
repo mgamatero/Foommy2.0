@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -8,6 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Foommy2';
+
+  items: Observable<any[]>;
+
+  constructor() {
+
+  }
 
 }
 

@@ -24,9 +24,9 @@ export class PageRegisterComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private router: Router,
-        private auth:AuthService,
-        private foomyService:FoommyService,
-        private userObjService:UserObjService,
+        private auth: AuthService,
+        private foomyService: FoommyService,
+        private userObjService: UserObjService,
     )
     {}
 
@@ -49,14 +49,14 @@ export class PageRegisterComponent implements OnInit {
         if (this.registerForm.invalid) {
             return;
         }
-              this.auth.emailSignUp(this.f.username.value, this.f.password.value)
+        this.auth.emailSignUp(this.f.username.value, this.f.password.value)
         .then((data) => {
-                  this.userObjService.createUserObject(this.auth.currentUserInfo.uid)
+                  this.userObjService.createUserObject(this.auth.currentUserInfo.uid, this.f.username.value, this.registerForm.get('firstName').value, this.registerForm.get('lastName').value, 'false');
                   // console.log('CurrentUserInfo - '+this.auth.currentUserInfo.uid)
-                  this.router.navigate(['/'])
+                  this.router.navigate(['/']);
         },
-        err=>{
-                  window.alert(err.message)
+        err => {
+                  window.alert(err.message);
                   this.registerForm.reset();
         });
     }
