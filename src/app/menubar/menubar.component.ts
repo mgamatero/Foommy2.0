@@ -16,8 +16,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class MenubarComponent implements OnInit {
 
 currentUser: any;
-user$: Observable<any>;
-
+isChef: any;
 
   constructor(public auth: AuthService,
               public userService: UserObjService,
@@ -50,6 +49,8 @@ user$: Observable<any>;
         docRef.get().subscribe(doc => {
             if (doc.exists) {
                 console.log(doc.data());
+                this.isChef = doc.data().isChef;
+                console.log(this.isChef)
             } else {
                 // doc.data() will be undefined in this case
                 console.log('No such document!');
