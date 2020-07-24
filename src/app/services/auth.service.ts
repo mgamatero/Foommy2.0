@@ -1,42 +1,24 @@
 import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
-  AngularFirestoreCollection,
-  AngularFirestoreDocument,
 } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
-import { Observable, Subscriber } from 'rxjs';
-import { of } from 'rxjs';
-import {map} from 'rxjs/operators';
+import { auth, User } from 'firebase/app';
+import { Observable } from 'rxjs';
+
+import {map, first} from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-currentUserInfo:any;
-uid = this.afAuth.authState.pipe(
-  map(authState=>{
-    if (!authState){
-      return null
-      } else {
-        return authState.uid
-      }
-     })
-);
+  currentUserInfo: any;
+  loggedInUser$: Observable<User>;
 
 
-
-  constructor(private afAuth: AngularFireAuth) {
-
-    //extra step just so i can get currentUserInfo properties?
-    afAuth.onAuthStateChanged(user=>{
-      if (user) {
-         this.currentUserInfo = user;
-
-      }
-    })
-  }
+  constructor(private afAuth: AngularFireAuth,
+              private db: AngularFirestore) {}
 
   emailLogin(email: string, password: string) {
     return new Promise((resolve, reject) => {
@@ -51,12 +33,19 @@ uid = this.afAuth.authState.pipe(
     });
   }
 
-  emailSignUp(email: string, password: string) {
+  emailSignUp(email: string, password: string,) {
     return new Promise((resolve, reject) => {
       this.afAuth.createUserWithEmailAndPassword(email, password).then(
         (userData) => {
           resolve(userData);
-          console.log(userData.user.uid);
+          console.log(userData.user);
+          const item = {
+            uid: userData.user.uid,
+            email: userData.user.email
+          };
+          localStorage.setItem('uid', userData.user.uid);
+
+          this.currentUserInfo = item;
 
         },
         (err) => reject(err)
@@ -64,16 +53,25 @@ uid = this.afAuth.authState.pipe(
     });
   }
 
+
   emailLogout() {
     this.afAuth.signOut();
   }
 
-  isLogged() {
-    return this.afAuth.authState;
+
+  isLoggedIn() {
+    return this.afAuth.authState.pipe(first());
+ }
+
+
+  getCurrentUser(){
+
+    const userId = localStorage.getItem('uid');
+    this.loggedInUser$ = this.afAuth.authState.pipe(first());
+    return this.loggedInUser$;
   }
-getCurrentUser(){
-  return this.afAuth.currentUser;
-}
+
+
   googleLogin() {
     return new Promise((resolve, reject) => {
       this.afAuth.signInWithPopup(new auth.GoogleAuthProvider()).then(

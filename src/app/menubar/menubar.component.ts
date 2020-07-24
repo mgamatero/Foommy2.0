@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { UserObjService } from '../services/user-obj.service';
 import { Observable} from 'rxjs';
-import { async } from '@angular/core/testing';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireStorage } from '@angular/fire/storage';
+import * as firebase from 'firebase';
+import { AngularFirestore } from '@angular/fire/firestore';
+
 
 @Component({
   selector: 'app-menubar',
@@ -10,31 +14,55 @@ import { async } from '@angular/core/testing';
   styleUrls: ['./menubar.component.css']
 })
 export class MenubarComponent implements OnInit {
-loggedIn:boolean;
-chefOrNot:boolean;
-currentUserInfo$:any;
+
+currentUser: any;
+user$: Observable<any>;
 
 
-  constructor(public auth:AuthService,
-              public userObjService$:UserObjService)
-    {
-      console.log('uid'+ this.auth.uid)
-    //CODE DIES HERE  --  cant get uid???
-      // Why is uid present in the auth service, but i cannot 'pass' it here?
-      // Also, why can't I subscribe to it?
-
-
-    // this.userObjService$.getUserObjectByID(NEED UID HERE).subscribe((data) => {
-    //   this.currentUserInfo$ = data.payload.data() as any;
-    // });
-    }
+  constructor(public auth: AuthService,
+              public userService: UserObjService,
+              private afAuth: AngularFireAuth,
+              private db: AngularFirestore)
+    {}
 
   ngOnInit(): void {
-    this.auth.isLogged().subscribe(status=>this.loggedIn = status as any)
 
 
+    this.afAuth.onAuthStateChanged(user => {
 
-   }
+      this.currentUser = user;
+
+      console.log({user});
+      if (user) {
+        // User is signed in.
+        // var displayName = user.displayName;
+        // var email = user.email;
+        // var emailVerified = user.emailVerified;
+        // var photoURL = user.photoURL;
+        // var isAnonymous = user.isAnonymous;
+        // var uid = user.uid;
+        // var providerData = user.providerData;
+        // ...
+
+
+        const docRef = this.db.collection('users').doc(user.uid);
+
+        docRef.get().subscribe(doc => {
+            if (doc.exists) {
+                console.log(doc.data());
+            } else {
+                // doc.data() will be undefined in this case
+                console.log('No such document!');
+            }
+        });
+      } else {
+        // User is signed out.
+        // ...
+      }
+    });
+
+
+  }
 
   logOut(){
     this.auth.emailLogout();
