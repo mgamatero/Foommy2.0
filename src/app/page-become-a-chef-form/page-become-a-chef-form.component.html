@@ -1,1 +1,125 @@
-<p>page-become-a-chef-form works!</p>
+<form class="p-grid" [formGroup]="chefSignUpForm">
+  <div>
+    {{chefSignUpForm.value|json}}
+  </div>
+  <div class="p-col-9">
+    <div class="chef_signup_title">
+      New Chef Page - Welcome
+    </div>
+  </div>
+  <div class="p-col-2"></div>
+  <div class="p-col-10">
+    <hr>
+  </div>
+  <div class="p-col-2"></div>
+  <div class="p-col-7">
+    <div class="p-col-10">
+      <label for="dish_image" class="chef_image">Add a photo url of your self</label>
+      <input type="text" pInputText name="chef_image" formControlName="image" class="p-col-12">
+    </div>
+    <div class="p-col-10">
+      <label for="chef_name" class="chef_signup_labels">Chef Name:</label>
+      <input type="text" pInputText name="chef_name" formControlName="name"
+        placeholder="Be creative here.  Users will see you under this name" class="p-col-12">
+    </div>
+    <div class="p-col-10">
+      <label for="chef_email" class="chef_signup_labels">Chef email address</label>
+      <div>
+        <input type="text" pInputText name="chef_email" formControlName="contactEmail" class="p-col-12">
+      </div>
+    </div>
+    <div class="p-col-10">
+      <label for="chef_phone" class="chef_signup_labels">Chef phone num</label>
+      <div>
+        <input type="text" pInputText name="chef_phone" formControlName="contactPhone" class="p-col-12">
+      </div>
+    </div>
+
+    <div class="p-col-10">
+      <label for="name" class="chef_signup_labels">City</label>
+      <input type="text" pInputText name="name" formControlName="city" placeholder="City" class="p-col-12">
+    </div>
+    <div class="p-col-10">
+      <label for="state" class="chef_signup_labels">State</label>
+      <input type="text" pInputText name="dishstate" formControlName="state" placeholder="State" class="p-col-12">
+    </div>
+    <!-- <div class="p-col-10">
+      <label for="availableDays" class="chef_signup_labels">Available Days</label>
+      <div class="p-grid">
+        <p-checkbox name="groupname" type="checkbox" label="Sun" value="Sun" formControlName="availableDays" class="p-col-1">
+        </p-checkbox>
+        <p-checkbox name="groupname" label="M" value="M" formControlName="availableDays" class="p-col-1">
+        </p-checkbox>
+        <p-checkbox name="groupname" label="T" value="T" formControlName="availableDays" class="p-col-1">
+        </p-checkbox>
+        <p-checkbox name="groupname" label="W" value="W" formControlName="availableDays" class="p-col-1">
+        </p-checkbox>
+        <p-checkbox name="groupname" label="Th" value="Th" formControlName="availableDays" class="p-col-1">
+        </p-checkbox>
+        <p-checkbox name="groupname" label="F" value="F" formControlName="availableDays" class="p-col-1">
+        </p-checkbox>
+        <p-checkbox name="groupname" label="Sat" value="Sat" formControlName="availableDays" class="p-col-1">
+        </p-checkbox>
+      </div>
+    </div> -->
+    <div class="p-col-10">
+      <label for="availableTimes" class="chef_signup_labels">Available Times</label>
+      <input type="text" pInputText name="availableTimes" formControlName="availableTimes"
+        placeholder="noon - 5P, Brunch, Dinner, etc" class="p-col-12">
+    </div>
+    <div class="p-col-10">
+      <label for="chef_description" class="chef_signup_labels">About Me</label>
+      <textarea pInputTextarea wrap="hard" class="chef_description" name="chef_description" [rows]="5"
+        formControlName="misc" placeholder="About me, bio or brief anecdote" class="p-col-12"></textarea>
+    </div>
+  </div>
+
+  <!-- Preview Pane Starts here -->
+  <div class="p-col-5">
+    <!-- <div class="chef_preview_buttons">
+      <button pButton type="button" class="email_sign-up_button ui-button-success" label="Create Chef" icon='pi pi-plus'
+        iconPos="left" routerLink="/" (click)="onClickChefCreate()"></button>
+      <button pButton type="button" class="email_sign-up_button ui-button-danger" label="Cancel" icon='pi pi-times'
+        iconPos="left" routerLink="/" (click)="onClickChefCancel()"></button>
+    </div> -->
+
+    <div class="chef_preview_section">
+      <img src={{chefSignUpForm.value.image}} alt="" style="width: 50%; max-width:200px fit-content"
+        class="chef_signup_preview_image">
+      <div class="bottom-right">
+        <p>{{chefSignUpForm.value.misc}}
+        </p>
+      </div>
+      <div class="top-left p-col-align-center  chef_signup_preview_subtext">
+        {{chefSignUpForm.value.name}} - <span>{{chefSignUpForm.value.city}}, {{chefSignUpForm.value.state}}</span>
+      </div>
+      <div class="bottom-left" style="margin-left: 1rem">
+        <div>
+          <div>
+            <i class="far fa-envelope"></i>
+            {{chefSignUpForm.value.contactEmail}}
+          </div>
+          <div>
+            <i class="fas fa-phone"></i>
+            {{chefSignUpForm.value.contactPhone}}
+          </div>
+
+        </div>
+      </div>
+      <hr style="margin:2em">
+      <div class="chef_signup_preview_subtext">
+
+        Availability:
+      </div>
+      <div>
+        <i class="fas fa-calendar-alt"></i>
+        {{chefSignUpForm.value.availableDays}}
+      </div>
+      <div>
+        <i class="far fa-clock"></i>
+        {{chefSignUpForm.value.availableTimes}}
+      </div>
+    </div>
+  </div>
+</form>
+
